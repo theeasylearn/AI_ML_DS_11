@@ -1,0 +1,11 @@
+1) create python program to store below data in variables 
+    name 
+    email
+    mobile
+    age 
+    weight
+    gender 
+
+    display all variables. 
+
+    
