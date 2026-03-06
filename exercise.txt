@@ -12,4 +12,10 @@
 3) write a program to make sum & average of 3 user given 3 subject marks (english,maths,science) and display it 
 
 4) write a program to convert given kilograms into grams & display it 
-4) write a program to convert given meters into kilometers & display it 
+5) write a program to convert given meters into kilometers & display it 
+
+
+5) write a program to convert celsius into fahrenheit 
+6) write a program to convert hours into minutes 
+7) write a program to convert rupees into dollar (93)
+
