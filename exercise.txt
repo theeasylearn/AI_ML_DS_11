@@ -19,3 +19,8 @@
 6) write a program to convert hours into minutes 
 7) write a program to convert rupees into dollar (93)
 
+8) write a program to convert foot into meters 
+9) write a program to convert meters into inches.
+10) write a program to convert dollar into rupees. 
+11) write a program to findout area of circle 
+12) write a program to findout area & volume of cylinder 
