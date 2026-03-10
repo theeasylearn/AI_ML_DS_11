@@ -24,3 +24,16 @@
 10) write a program to convert dollar into rupees. 
 11) write a program to findout area of circle 
 12) write a program to findout area & volume of cylinder 
+
+new 
+--------------------
+
+1. Create a program that asks the user to enter **length and width of a rectangle** and displays the **area and perimeter of the rectangle**.
+
+2. Create a program that asks the user to enter **a number** and displays its **square root and square**.
+
+3. Create a program that asks the user to enter **minutes** and converts them into **hours and seconds**.
+
+4. Create a program that asks the user to enter **a number of days** and converts it into **weeks and remaining days**.
+
+5. Create a program that asks the user to enter **the base and height of a triangle** and displays the **area of the triangle**.
