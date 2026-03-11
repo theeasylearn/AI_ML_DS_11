@@ -37,3 +37,18 @@ new
 4. Create a program that asks the user to enter **a number of days** and converts it into **weeks and remaining days**.
 
 5. Create a program that asks the user to enter **the base and height of a triangle** and displays the **area of the triangle**.
+
+list
+-------------------
+1) create list and store all your favorite  movie name and display it 
+2) create list and store your all friends age and display it. 
+3) create list that store 5 different type of values and display it.
+
+4) create empty list cars 
+    add new car maruti, tata, mahindra at the end 
+    add new car bmw at 0th position 
+    add new car mercedes at 1st position
+    merge car with another list scooters 
+    remove car from 0th position 
+    empty list scooters 
+    
