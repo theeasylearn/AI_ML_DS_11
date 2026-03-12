@@ -52,3 +52,14 @@ list
     remove car from 0th position 
     empty list scooters 
     
+
+5) create numeric list that has 10 number in any order 
+        1) findout maximum value from it 
+        2) findout minimum value from it 
+
+
+6) create tuple which has 10 LLM ai names 
+    1) print 1st five ai 
+    2) print last five ai 
+    3) print 1 to 3 ai 
+
