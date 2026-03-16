@@ -14,3 +14,4 @@ print(book)
 book['topics'][0] = 'index' #error as topics is tuple 
 book['chapter'][0] = 10 #change is possible chapter is list 
 del book['price'] #scaler value 
+

@@ -63,3 +63,32 @@ list
     2) print last five ai 
     3) print 1 to 3 ai 
 
+dictionary 
+------------------------------------------------------
+
+1) Create Dictionary to store your college details like name, trust, principal, establishment year, address, city, courses etc 
+    print dictionary 
+    update city using update method 
+    add state using update methods 
+    display all keys using keys method 
+    display all values using values method 
+    remove state using pop method 
+    remove last item using pop item method 
+    copy dictionary using copy method 
+    remove all key value pair in original dictionary 
+    print original and copied dictionary 
+
+2)  create dictionary store student name and marks for maths, science, english, computer, drawing 
+    1) display dictionary 
+    2) display total of marks 
+    3) display average 
+
+set 
+1) create a python program to create 2 set. 
+    1 set has list of sports include in olympic 2016
+    2 set has list of sports include in olympic 2022
+
+    display both set 
+    findout unique sports in both set & display it 
+    findout common sports in both set & display it 
+    findout sports in olympic 2022 but not in 2016 & display it 
