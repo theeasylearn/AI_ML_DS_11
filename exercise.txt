@@ -92,3 +92,12 @@ set
     findout unique sports in both set & display it 
     findout common sports in both set & display it 
     findout sports in olympic 2022 but not in 2016 & display it 
+
+operators
+-----------------------------------
+1) write a program to convert given grams into kilograms and remaining grams. 
+2) write a program to convert no of balls into hours and remaining ball in cricket.
+3) write a program to convert inches into foot and remaining inches 
+
+4) write a program to reverse 3 digit amount given by user 
+5) #write a program to display 3 digit amount into words 
