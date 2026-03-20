@@ -100,4 +100,4 @@ operators
 3) write a program to convert inches into foot and remaining inches 
 
 4) write a program to reverse 3 digit amount given by user 
-5) #write a program to display 3 digit amount into words 
+5) write a program to display 3 digit amount into words 
