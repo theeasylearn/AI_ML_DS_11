@@ -101,3 +101,139 @@ operators
 
 4) write a program to reverse 3 digit amount given by user 
 5) write a program to display 3 digit amount into words 
+
+general
+
+1) write a program to findout area of circle using given radius 
+2) write a program to findout area of triangle using given base and height
+3) write a program to findout simple interest of given amount rate and year 
+4) write a program to calculate GST tax amount from given bill amount and tax rate 
+
+List
+---------------
+create a list to store your favourite destination in india
+create a list & store 10 different type of values in it 
+    print all values 
+    print 1st value 
+    print 1st five value 
+    print last 5 value 
+    print list twice using * 
+    print item in the list from 2nd to 5th position
+
+Dictionary
+---------------------------
+    Create Dictionary store 10 different types of detail about you. 
+    add dob into it.
+    display Dictionary
+    remove dob from Dictionary 
+    get only keys 
+    get only values 
+    update age key 
+    update city key using update method 
+    copy Dictionary into another Dictionary using shallow copy technique
+    empty copied Dictionary 
+    display empty Dictionary 
+    
+write a program to convert 3 digit amount into words
+input :123 output one two three
+amount = 123
+
+
+write a program to convert 3 digit amount into words
+input :123 output one hundred twenty three
+
+write a program to convert 4 digit amount into words
+input :1234 output one two three four 
+
+#write a program to convert given minutes into hours and remaining minutes
+input : 150 minutes 
+output : 2 hours and 30 minutes 
+
+#write a program to convert given grams into kg and remaining grams
+input : 2500 grams
+output : 2 kg and 500 grams 
+
+#write a program to display dinomations of currency for given amount
+input : 387 Rupees 
+output : 
+200 x 1 = 200
+100 x 1 = 100
+50 x 1 =  50
+20 x 1 =  20
+10 x 1 =  10
+5 x 1 =   05
+2 x 1 =   02
+1 x 1 =   01
+
+decision making statement
+---------------------
+1) write a program to convert 24 hours time into 12 hours format time and display it with AM PM message. 
+input : 15 hours 
+output  3 PM 
+
+input : 11 hours 
+output  11 AM 
+
+input : 25 hours 
+output  invalid input 
+
+2) write a program to accept length and width of two different farm from user. and findout & display which farm is bigger 
+
+3) write a program to accept day of week (between 1 to 7) and then display name of day. (use simple if decision making)
+    input 1 : monday 
+    input 2 : tuesday 
+    input 7 : sunday 
+
+4) write a program to findout whether given year is millennium year or not. using if else decision making statements.
+
+5) write a program to findout elder brother from given two brother's age. 
+
+6) write a program to findout which is cheaper approach to buy IPhone 17 pro max.  consider use is going usa should he buy iphone from usa or from india. 
+
+7) write a program to decide which is cheaper approach to go from ahmedabad to delhi. by car or by train. consider person has his own petrol car  and he prefer to travel by 1st class train 
+
+
+if else if decision making 
+1) 
+Write a program that takes a 5 subject marks from user. calculate total and average  and prints the grade using the following conditions:
+
+| Percentage | Grade |
+| ---------- | ----- |
+| 90–100     | A+    |
+| 80–89      | A     |
+| 70–79      | B     |
+| 60–69      | C     |
+| 50–59      | D     |
+| below 50   | Need to improve  |
+----------------------------------------
+
+3) write a program to accept 2 number from user. and accept choice for operations.
+operations will be addition, subtraction, multiplication, division
+do operation and display result as per user choice using switch statements.
+
+2) write a program to accept month number from user and display how many days month has. (use logical operator or)
+    input : 1 output : this month has 31 days 
+    input : 4 output : this month has 30 days 
+
+3) write a program to findout whether given year is millenium year or not 
+
+4) write a program to accept birth day and birth month from user as separate input. decide zodiac sign from below table 
+    Aries: March 21–April 19
+    Taurus: April 20–May 20
+    Gemini: May 21–June 21
+    Cancer: June 22–July 22
+    Leo: July 23–August 22
+    Virgo: August 23–September 22
+    Libra: September 23–October 22
+    Scorpio: October 24–November 21
+    Sagittarius: November 22–December 21
+    Capricorn: December 22–January 19
+    Aquarius: January 20–February 18
+    Pisces: February 19–March 20
+
+5) write a program for male female marriage compatibility as per below link,  accept birth day and birth month from user as separate input. decide zodiac sign as per previous example and then use zodiac sign to decide  marriage compatibility
+
+https://miro.medium.com/v2/resize:fit:1100/format:webp/1*f58HMTVzfN2XvCPR23wXgA.jpeg
+
+6) write a program to calculate & display day of week (monday/tuesday) from given date. 
+refer https://www.wikihow.com/Calculate-the-Day-of-the-Week
