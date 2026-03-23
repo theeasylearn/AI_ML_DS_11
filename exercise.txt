@@ -153,7 +153,7 @@ output : 2 hours and 30 minutes
 input : 2500 grams
 output : 2 kg and 500 grams 
 
-#write a program to display dinomations of currency for given amount
+#write a program to display denotations of currency for given amount
 input : 387 Rupees 
 output : 
 200 x 1 = 200
