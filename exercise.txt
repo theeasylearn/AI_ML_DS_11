@@ -184,13 +184,20 @@ output  invalid input
     input 2 : tuesday 
     input 7 : sunday 
 
-4) write a program to findout whether given year is millennium year or not. using if else decision making statements.
+
 
 5) write a program to findout elder brother from given two brother's age. 
 
 6) write a program to findout which is cheaper approach to buy IPhone 17 pro max.  consider use is going usa should he buy iphone from usa or from india. 
 
 7) write a program to decide which is cheaper approach to go from ahmedabad to delhi. by car or by train. consider person has his own petrol car  and he prefer to travel by 1st class train 
+
+if else 
+----------------------
+1) write a program to convert 24 hours time into 12 hours format time and display it with AM PM   message. 
+
+2) write a program to findout which triangle is bigger in area from given 2 triangle base and length 
+
 
 
 if else if decision making 
