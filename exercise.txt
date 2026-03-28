@@ -256,3 +256,10 @@ https://miro.medium.com/v2/resize:fit:1100/format:webp/1*f58HMTVzfN2XvCPR23wXgA.
 
 6) write a program to calculate & display day of week (monday/tuesday) from given date. 
 refer https://www.wikihow.com/Calculate-the-Day-of-the-Week
+
+
+loop 
+-------------
+1) 1 3 5 7 9 11 ... 100
+2) 1 8 27 64 125 .... 1000
+3) 1 2 4 7 11 16 22 29 37 .... 1000
