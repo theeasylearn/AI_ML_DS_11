@@ -270,3 +270,11 @@ loop
 (use astrik operator)
 
 7) 1 3 5 7 11 13 17 19 23 29 (what are these numbers)
+
+for loop 
+
+display all negative values from list and also count it 
+display only values divisible by 10 from tuples (use operator %)
+display only values between 50 to 100 in tuples (use relational operator & logical operator)
+display only that countries from list which ends with tan 
+display each number in reverse in list (all numbers are of 2 digits)

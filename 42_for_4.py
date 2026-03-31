@@ -1,0 +1,6 @@
+#write  a program to display only even numbers from tuple #also count even number
+# display only that countries whose name land
+countries = ["India", "United States", "Canada", "Brazil", "Argentina", "United Kingdom", "France", "Germany", "Italy", "Spain", "Portugal", "Netherlands", "Belgium", "Switzerland", "Austria", "Sweden", "Norway", "Denmark", "Finland", "Ireland", "Russia", "China", "Japan", "South Korea", "Indonesia", "Malaysia", "Thailand", "Vietnam", "Philippines", "Singapore", "Australia", "New Zealand", "South Africa", "Nigeria", "Kenya", "Egypt", "Morocco", "Algeria", "Tunisia", "Ethiopia", "Ghana", "Tanzania", "Uganda", "Zimbabwe", "Zambia", "Angola", "Namibia", "Botswana", "Senegal", "Cameroon", "Saudi Arabia", "United Arab Emirates", "Qatar", "Kuwait", "Oman", "Bahrain", "Turkey", "Iran", "Iraq", "Israel", "Jordan", "Lebanon", "Syria", "Afghanistan", "Pakistan", "Bangladesh", "Sri Lanka", "Nepal", "Bhutan", "Maldives", "Myanmar", "Cambodia", "Laos", "Mongolia", "Kazakhstan", "Uzbekistan", "Turkmenistan", "Kyrgyzstan", "Tajikistan", "Mexico", "Cuba", "Jamaica", "Haiti", "Dominican Republic", "Colombia", "Peru", "Chile", "Venezuela", "Ecuador", "Bolivia", "Paraguay", "Uruguay", "Guatemala", "Honduras", "El Salvador", "Nicaragua", "Costa Rica", "Panama"]
+for item in countries:
+    if 'land' in item:
+        print(item,end=' ')
