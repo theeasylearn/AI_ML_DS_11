@@ -278,3 +278,22 @@ display only values divisible by 10 from tuples (use operator %)
 display only values between 50 to 100 in tuples (use relational operator & logical operator)
 display only that countries from list which ends with tan 
 display each number in reverse in list (all numbers are of 2 digits)
+
+write a program to display students who are failed (marks<35)
+write a program to display students who are topper (marks>90)
+write a program to display count of pass and failed failed (marks<35)
+
+students_marks = {
+    "Aarav": 78, "Vihaan": 25, "Aditya": 92, "Arjun": 47, "Krishna": 83,
+    "Ishaan": 56, "Rohan": 30, "Karan": 88, "Rahul": 74, "Amit": 61,
+    "Neeraj": 95, "Suresh": 32, "Mahesh": 69, "Rajesh": 81, "Dinesh": 53,
+    "Naresh": 37, "Mukesh": 11, "Anil": 44, "Sunil": 72, "Deepak": 85,
+    "Vikas": 66, "Pankaj": 34, "Nitin": 90, "Gaurav": 58, "Manish": 76,
+    "Tarun": 49, "Varun": 0, "Sanjay": 63, "Ajay": 97, "Vijay": 55
+}
+
+write a program to count consonants in any case in given string  
+write a program to count digits  given string  
+write a program to count words  given string  
+input: ankit patel 
+output : 2 words
