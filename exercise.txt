@@ -297,3 +297,10 @@ write a program to count digits  given string
 write a program to count words  given string  
 input: ankit patel 
 output : 2 words
+
+nested loop 
+1) write a program to print 30 to 21 multiplication table 
+# 30 x 1 = 30
+# 30 x 2 = 60
+# 30 x 10 = 300
+
