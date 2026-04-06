@@ -340,4 +340,9 @@ print("*")
 1 2 3 4 5
 1 2 3 4 5
 
-
+function 
+------------
+1) write a program that return qube of given number 
+2) write a program that return volume of given length, width, depth  
+3) write a program that return simple interest of given amount rate year 
+4) write a program tat return maximum number from two number  
