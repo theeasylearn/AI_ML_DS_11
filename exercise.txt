@@ -346,3 +346,10 @@ function
 2) write a program that return volume of given length, width, depth  
 3) write a program that return simple interest of given amount rate year 
 4) write a program tat return maximum number from two number  
+
+
+package example 
+------------------------------------
+findout python package to convert english text into gujarati text and use it 
+findout python pakcage to download youtube video 
+findout ptyhon package to convert text to audio (gujarati text gujaati audio )
