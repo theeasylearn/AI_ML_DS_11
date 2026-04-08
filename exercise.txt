@@ -352,4 +352,13 @@ package example
 ------------------------------------
 findout python package to convert english text into gujarati text and use it 
 findout python pakcage to download youtube video 
-findout ptyhon package to convert text to audio (gujarati text gujaati audio )
+findout ptyhon package to convert text to audio (gujarati text gujarati audio )
+
+
+default argument 
+1) create function that return total Seconds of given hours, minutes and seconds. in this example minutes and second should be optional 
+
+2) create function that return total Bytes of given GB, MB and KB. in this example MB and KB optional. 
+-------------------------------------------
+
+
