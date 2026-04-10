@@ -361,4 +361,11 @@ default argument
 2) create function that return total Bytes of given GB, MB and KB. in this example MB and KB optional. 
 -------------------------------------------
 
+arbitrary argument function 
+------------------------------
+1) write a program to findout minimum value from all the argument passed in function 
+2) write a program to findout mean value from all the argument passed in function 
+3) write a program to findout median value from all the argument passed in function 
+4) write a program to display on that cities whose name end with nagar from all the cities passed as argument
 
+5) write a program to create function return simple Interest using keyword argument concept 
