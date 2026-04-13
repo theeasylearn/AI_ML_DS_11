@@ -369,3 +369,14 @@ arbitrary argument function
 4) write a program to display on that cities whose name end with nagar from all the cities passed as argument
 
 5) write a program to create function return simple Interest using keyword argument concept 
+
+recursion 
+--------------------------
+
+6) write a program to convert decimal number into octal number using recursion 
+7) write a program to convert amount into words 
+    input: 12345 print: one two three four five 
+
+function return multiple value 
+-------------------------------------------------------------------------
+8) write a program to findout minimum & maximum from all the argument passed in function and return it 
