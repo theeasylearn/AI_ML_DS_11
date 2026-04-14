@@ -380,3 +380,17 @@ recursion
 function return multiple value 
 -------------------------------------------------------------------------
 8) write a program to findout minimum & maximum from all the argument passed in function and return it 
+
+map and filter exercise 
+
+write a program to generate qube of all the numbers in list using map function 
+write a program to convert all the negative numbers into positive number in list using map function 
+write a program to convert all the float  numbers into integer number of the list using map function 
+
+filter example 
+write a program to filter all the players who have score more then 50 runs in match. use list and filter function 
+
+write a program to filter all the players who have score more then 50 but less then 100 runs in match. use list and filter function 
+
+
+
