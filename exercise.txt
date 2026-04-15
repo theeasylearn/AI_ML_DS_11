@@ -393,4 +393,21 @@ write a program to filter all the players who have score more then 50 runs in ma
 write a program to filter all the players who have score more then 50 but less then 100 runs in match. use list and filter function 
 
 
+Module 
+create module currency.py that has functions  to convert given indian rupees into different currency
+    toDollar()
+    toEuro()
+    toYen()
+    toPound()
+
+create variable count with value 100 
+create function sendSMS()
+    which will access global variable count 
+    and it will reduce count variable by 1 
+    and display message SMS send 
+    
+    call sendSMS() function and also display count variable value after function called.
+    
+
+
 
