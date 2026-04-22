@@ -428,6 +428,14 @@ Create Package India which has 4 sub package
         getLanguage() all language of North india 
         isLanguageExist(languageName) return true if the language is of North india otherwise returns false 
 
-
+File Management 
+------------------------
+1) write a program to display given file content on screen. also display how many line file has 
+2) write a program to display given file content in reverse on screen. 
+    steps 1) create list 
+          2) open file 
+          3) read content from file and append in list 
+          4) after all content read, display list in reverse 
+3) write a program to count words in given file. 
 
 
