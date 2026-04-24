@@ -1,0 +1,30 @@
+Here is the clean version without any special characters (safe for Python read):
+
+1. Andhra Pradesh - Known for its rich cultural heritage, classical dance Kuchipudi, and major IT hubs like Visakhapatnam.
+2. Arunachal Pradesh - A scenic northeastern state famous for its mountains, monasteries, and vibrant tribal culture.
+3. Assam - Renowned for its tea plantations, Brahmaputra River, and unique wildlife like the one-horned rhinoceros.
+4. Bihar - Historically significant as the center of ancient empires and the birthplace of Buddhism.
+5. Chhattisgarh - Rich in minerals and forests, known for tribal culture and waterfalls.
+6. Goa - Famous for its beaches, nightlife, and Portuguese influenced architecture.
+7. Gujarat - Known for business culture, Gir lions, and being the birthplace of Mahatma Gandhi.
+8. Haryana - A key agricultural state and hub for sports and industrial development.
+9. Himachal Pradesh - Popular for hill stations, snow capped mountains, and adventure tourism.
+10. Jharkhand - Mineral rich state with dense forests and significant tribal population.
+11. Karnataka - Home to Bengaluru, Indias tech capital, and rich in heritage sites.
+12. Kerala - Known as Gods Own Country for its backwaters, greenery, and high literacy rate.
+13. Madhya Pradesh - The Heart of India, famous for wildlife sanctuaries and historical monuments.
+14. Maharashtra - Indias financial powerhouse with Mumbai and diverse culture.
+15. Manipur - Known for its natural beauty, classical dance, and Loktak Lake.
+16. Meghalaya - Famous for heavy rainfall, living root bridges, and scenic landscapes.
+17. Mizoram - A peaceful hill state known for its bamboo forests and unique culture.
+18. Nagaland - Known for vibrant tribal festivals like Hornbill and rich traditions.
+19. Odisha - Famous for Jagannath Temple, classical dance Odissi, and coastline.
+20. Punjab - The land of five rivers, known for agriculture, bhangra, and Sikh heritage.
+21. Rajasthan - Known for deserts, royal palaces, forts, and vibrant culture.
+22. Sikkim - A small Himalayan state known for biodiversity and Kanchenjunga.
+23. Tamil Nadu - Rich in Dravidian architecture, temples, and classical arts.
+24. Telangana - A modern state with Hyderabad as a major IT and cultural center.
+25. Tripura - Known for its palaces, temples, and cultural heritage in the northeast.
+26. Uttar Pradesh - Indias most populous state, home to the Taj Mahal and ancient cities.
+27. Uttarakhand - Known for Himalayan beauty and important pilgrimage sites.
+28. West Bengal - Famous for cultural heritage, literature, and the city of Kolkata.
