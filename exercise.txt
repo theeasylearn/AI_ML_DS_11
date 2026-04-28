@@ -441,3 +441,16 @@ File Management
 3) write a program to count words in given file. 
 
 
+Exception Handling 
+1) Write a program to handle all the exception that can be generated while calculating EMI for given amount, rate and tenure 
+
+2) write a program to accept male and female person name from user. name must contain bhai or ben or Mr. or Mrs. or Miss. if user do not follow this rule raise exception using try raise and except keywords 
+
+3) write a program to accept male and female person name from user. name must contain bhai or ben or Mr. or Mrs. or Miss. if user do not follow this rule raise exception using CustomException 
+
+4) implement exception Handling in example no 87
+5) implement exception Handling in example no 88
+6) implement exception Handling in example no 93
+7) implement exception Handling in example no 94
+8) implement exception Handling in example no 95
+9) implement exception Handling in example no 96
