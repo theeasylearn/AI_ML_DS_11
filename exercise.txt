@@ -454,3 +454,19 @@ Exception Handling
 7) implement exception Handling in example no 94
 8) implement exception Handling in example no 95
 9) implement exception Handling in example no 96
+
+
+class and object 
+---------------------
+1) create class product to store below product Detail
+        id,name,price,weight 
+    it should have constructor, display(display all instance variable ) method and pricePerGram() method 
+
+2) create class tour to store below tour detail 
+        id,title,days,price,detail 
+        it also has one class variable which store tour operator name 
+        it should also have  constructor, display(display all instance variable ) method 
+        and display tour operator name outside class 
+
+
+
