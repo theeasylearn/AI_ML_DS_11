@@ -1,6 +1,6 @@
-import world.europe.country as eu 
-import world.afferica.country as af 
-import world.asia.country as ai 
+import python.world.europe.country as eu 
+import python.world.afferica.country as af 
+import python.world.asia.country as ai 
 
 #function calling of package 
 print(eu.getCountry())
