@@ -1,0 +1,164 @@
+SQL Command 
+---------------------------------
+What is constraint?
+  constraint means rules that we apply on fields. this rules must be obeyed at the time of inserting or updating row in table. if these are violated (not followed)  then row will not be inserted/updated 
+
+ 1. PRIMARY KEY Constraint
+- Description: Uniquely identifies each record in a table. 
+    It cannot be NULL and must be unique.
+- Features: Automatically creates a clustered index.
+- Usage: One table can have only one Primary Key (can be single or composite).
+- Example: `id INT PRIMARY KEY`
+
+ 2. FOREIGN KEY Constraint
+- Description: Ensures referential integrity between two tables. It links a column in one table to the PRIMARY KEY in another table.
+- Features: Prevents invalid data insertion and supports actions like `ON DELETE CASCADE`, `ON UPDATE SET NULL`, etc.
+- Example: 
+  ```sql
+  FOREIGN KEY (customer_id) REFERENCES customers(id)
+  ```
+
+ 3. UNIQUE Constraint
+- Description: Ensures all values in a column (or group of columns) are distinct.
+- Features: Allows NULL values (unlike Primary Key). Multiple UNIQUE constraints can exist in one table.
+- Example: `email VARCHAR(255) UNIQUE`
+
+ 4. NOT NULL Constraint
+- Description: Ensures a column cannot have a NULL value. The column must contain some value.
+- Features: Applied at column level.
+- Example: `name VARCHAR(100) NOT NULL`
+
+ 5. CHECK Constraint *(MySQL 8.0.16 and above)*
+- Description: Allows you to specify a condition that each row must satisfy.
+- Features: Validates data based on a logical expression.
+- Example: 
+  ```sql
+  age INT CHECK (age >= 18)
+  ```
+
+ 6. DEFAULT Constraint
+- Description: Provides a default value for a column when no value is specified during INSERT.
+- Example: `status VARCHAR(20) DEFAULT 'active'`
+
+ 7. AUTO_INCREMENT Constraint
+- Description: Automatically generates a unique integer value when a new record is inserted.
+- Features: Usually used with Primary Key. Only one AUTO_INCREMENT column per table.
+- Example: `id INT AUTO_INCREMENT PRIMARY KEY
+
+Additional Notes:
+- Constraints can be defined at column level or table level.
+- You can name constraints using `CONSTRAINT constraint_name`.
+- You can add/remove constraints using `ALTER TABLE` statements.
+
+How to Create table in database?
+Syntax 
+   create table <tablename> (
+      field-name datatype(size) constraint,
+      field-name datatype(size) constraint,
+      field-name datatype(size) constraint,
+      field-name datatype(size) constraint,
+      field-name datatype(size) constraint,
+   )
+
+Example
+----------
+create table teacher (
+    id int PRIMARY KEY AUTO_INCREMENT, 
+    fullname VARCHAR(128) NOT NULL, 
+    gender VARCHAR(6) NOT NULL, 
+    dob date not null, 
+    email varchar(128) unique not null, 
+    mobile varchar(10) unique not null, 
+    weight float CHECK (weight>0),
+    height float, 
+    photo varchar(128)
+)
+
+How to Insert row into table?
+-----------------------------
+to insert a row in table, one have to use insert command. there are 2 version of it. 
+1st version 
+insert into <tablename> values (<value-1>,<value-2>,....<value-N>)
+Example 
+insert into teacher values (0,'ram patel','male','1985-07-12','theeasylearn@gmail.com','1234567890',75.50,5.7,'photo.jpg')
+
+INSERT INTO teacher 
+(id, fullname, gender, dob, email, mobile, weight, height, photo) 
+VALUES
+(0, 'Rahul Sharma', 'male', '1985-03-15', 'rahul.sharma@gmail.com', '9876543210', 78.5, 5.8, 'photo.jpg'),
+(0, 'Priya Patel', 'female', '1990-07-22', 'priya.patel@gmail.com', '9876543211', 62.3, 5.4, 'photo.jpg'),
+(0, 'Amit Kumar', 'male', '1987-11-05', 'amit.kumar@gmail.com', '9876543212', 82.0, 5.9, 'photo.jpg'),
+(0, 'Sneha Gupta', 'female', '1992-04-18', 'sneha.gupta@gmail.com', '9876543213', 58.7, 5.3, 'photo.jpg'),
+(0, 'Vikram Singh', 'male', '1984-09-30', 'vikram.singh@gmail.com', '9876543214', 85.5, 6.0, 'photo.jpg'),
+(0, 'Neha Mehta', 'female', '1989-01-12', 'neha.mehta@gmail.com', '9876543215', 64.8, 5.5, 'photo.jpg'),
+(0, 'Rohan Desai', 'male', '1991-06-25', 'rohan.desai@gmail.com', '9876543216', 74.2, 5.7, 'photo.jpg'),
+(0, 'Anjali Verma', 'female', '1986-08-14', 'anjali.verma@gmail.com', '9876543217', 60.5, 5.4, 'photo.jpg'),
+(0, 'Sandeep Reddy', 'male', '1988-12-03', 'sandeep.reddy@gmail.com', '9876543218', 80.0, 5.8, 'photo.jpg'),
+(0, 'Pooja Nair', 'female', '1993-05-20', 'pooja.nair@gmail.com', '9876543219', 55.4, 5.2, 'photo.jpg'),
+(0, 'Karan Malhotra', 'male', '1985-10-08', 'karan.malhotra@gmail.com', '9876543220', 76.8, 5.9, 'photo.jpg'),
+(0, 'Divya Joshi', 'female', '1990-02-28', 'divya.joshi@gmail.com', '9876543221', 63.1, 5.3, 'photo.jpg'),
+(0, 'Arjun Rao', 'male', '1987-07-19', 'arjun.rao@gmail.com', '9876543222', 83.5, 5.8, 'photo.jpg'),
+(0, 'Swati Iyer', 'female', '1991-09-11', 'swati.iyer@gmail.com', '9876543223', 59.9, 5.4, 'photo.jpg'),
+(0, 'Manoj Pandey', 'male', '1986-04-22', 'manoj.pandey@gmail.com', '9876543224', 77.2, 5.7, 'photo.jpg'),
+(0, 'Riya Choudhary', 'female', '1989-11-07', 'riya.choudhary@gmail.com', '9876543225', 61.7, 5.5, 'photo.jpg'),
+(0, 'Ajay Yadav', 'male', '1988-03-16', 'ajay.yadav@gmail.com', '9876543226', 81.3, 5.9, 'photo.jpg'),
+(0, 'Kavita Sharma', 'female', '1992-08-30', 'kavita.sharma@gmail.com', '9876543227', 57.8, 5.3, 'photo.jpg'),
+(0, 'Prakash Jain', 'male', '1984-06-05', 'prakash.jain@gmail.com', '9876543228', 84.0, 5.8, 'photo.jpg'),
+(0, 'Meera Nair', 'female', '1990-12-19', 'meera.nair@gmail.com', '9876543229', 60.2, 5.4, 'photo.jpg'),
+(0, 'Siddharth Bose', 'male', '1987-02-14', 'siddharth.bose@gmail.com', '9876543230', 79.6, 5.7, 'photo.jpg'),
+(0, 'Ananya Das', 'female', '1993-07-28', 'ananya.das@gmail.com', '9876543231', 54.9, 5.2, 'photo.jpg'),
+(0, 'Rajesh Khanna', 'male', '1985-05-10', 'rajesh.khanna@gmail.com', '9876543232', 82.7, 5.8, 'photo.jpg'),
+(0, 'Simran Kaur', 'female', '1989-10-23', 'simran.kaur@gmail.com', '9876543233', 65.4, 5.5, 'photo.jpg'),
+(0, 'Vivek Menon', 'male', '1986-01-17', 'vivek.menon@gmail.com', '9876543234', 78.1, 5.9, 'photo.jpg'),
+(0, 'Aditi Sen', 'female', '1991-04-09', 'aditi.sen@gmail.com', '9876543235', 58.3, 5.3, 'photo.jpg'),
+(0, 'Nikhil Agarwal', 'male', '1988-09-02', 'nikhil.agarwal@gmail.com', '9876543236', 80.9, 5.8, 'photo.jpg'),
+(0, 'Shalini Pillai', 'female', '1992-06-15', 'shalini.pillai@gmail.com', '9876543237', 62.7, 5.4, 'photo.jpg'),
+(0, 'Harish Thakur', 'male', '1984-08-27', 'harish.thakur@gmail.com', '9876543238', 86.2, 6.0, 'photo.jpg'),
+(0, 'Bhavna Roy', 'female', '1990-03-04', 'bhavna.roy@gmail.com', '9876543239', 63.5, 5.5, 'photo.jpg'),
+(0, 'Deepak Chauhan', 'male', '1987-12-12', 'deepak.chauhan@gmail.com', '9876543240', 77.8, 5.7, 'photo.jpg'),
+(0, 'Tanvi Kapoor', 'female', '1993-01-25', 'tanvi.kapoor@gmail.com', '9876543241', 56.1, 5.2, 'photo.jpg'),
+(0, 'Saurabh Mishra', 'male', '1985-04-30', 'saurabh.mishra@gmail.com', '9876543242', 81.6, 5.8, 'photo.jpg'),
+(0, 'Ritu Saxena', 'female', '1989-07-08', 'ritu.saxena@gmail.com', '9876543243', 64.2, 5.4, 'photo.jpg'),
+(0, 'Gaurav Tripathi', 'male', '1988-10-19', 'gaurav.tripathi@gmail.com', '9876543244', 79.4, 5.9, 'photo.jpg'),
+(0, 'Pallavi Banerjee', 'female', '1991-05-03', 'pallavi.banerjee@gmail.com', '9876543245', 59.5, 5.3, 'photo.jpg'),
+(0, 'Yash Sharma', 'male', '1986-11-21', 'yash.sharma@gmail.com', '9876543246', 83.8, 5.8, 'photo.jpg'),
+(0, 'Ishita Patel', 'female', '1992-09-16', 'ishita.patel@gmail.com', '9876543247', 61.0, 5.4, 'photo.jpg'),
+(0, 'Kunal Rathore', 'male', '1984-02-07', 'kunal.rathore@gmail.com', '9876543248', 84.5, 5.9, 'photo.jpg'),
+(0, 'Lavanya Singh', 'female', '1990-08-11', 'lavanya.singh@gmail.com', '9876543249', 63.8, 5.5, 'photo.jpg'),
+(0, 'Pradeep Joshi', 'male', '1987-06-28', 'pradeep.joshi@gmail.com', '9876543250', 77.5, 5.7, 'photo.jpg'),
+(0, 'Sakshi Verma', 'female', '1993-03-19', 'sakshi.verma@gmail.com', '9876543251', 57.2, 5.3, 'photo.jpg'),
+(0, 'Mayank Dubey', 'male', '1985-12-25', 'mayank.dubey@gmail.com', '9876543252', 80.4, 5.8, 'photo.jpg'),
+(0, 'Garima Khan', 'female', '1989-09-30', 'garima.khan@gmail.com', '9876543253', 62.9, 5.4, 'photo.jpg'),
+(0, 'Ramesh Iyer', 'male', '1988-07-14', 'ramesh.iyer@gmail.com', '9876543254', 78.9, 5.7, 'photo.jpg'),
+(0, 'Nandini Rao', 'female', '1991-02-22', 'nandini.rao@gmail.com', '9876543255', 60.8, 5.5, 'photo.jpg'),
+(0, 'Suresh Malhotra', 'male', '1986-05-09', 'suresh.malhotra@gmail.com', '9876543256', 82.3, 5.8, 'photo.jpg'),
+(0, 'Kiran Das', 'female', '1992-10-05', 'kiran.das@gmail.com', '9876543257', 58.5, 5.3, 'photo.jpg'),
+(0, 'Arvind Reddy', 'male', '1984-04-18', 'arvind.reddy@gmail.com', '9876543258', 85.1, 5.9, 'photo.jpg'),
+(0, 'Shruti Gupta', 'female', '1990-11-27', 'shruti.gupta@gmail.com', '9876543259', 64.0, 5.4, 'photo.jpg');
+
+
+2nd method 
+------------
+syntax 
+insert into <tablename> (<fieldnames>) values (<value-1>)
+
+Note : 
+no of fields and no of values must be equal 
+we can skip some fields while inserting rows 
+
+Example
+insert into teacher (fullname,gender,dob,email,mobile) values ('mohan sharma','male','2000-12-05','mohan.sharma@gmail.com','1478523690')
+
+How to delete row from table?
+-----------------------------
+to delete row from table, one has to use delete command 
+
+syntax 
+delete from <tablename> [condition/relational expression]
+
+to delete all rows 
+delete from teacher
+
+to delete specific row
+delete teacher whose id is 53
+delete from teacher where id = 53
