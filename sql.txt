@@ -162,3 +162,59 @@ delete from teacher
 to delete specific row
 delete teacher whose id is 53
 delete from teacher where id = 53
+
+delete teacher whose name is vikram singh
+delete from teacher where fullname='vikram SINGH'
+
+delete teacher whose whose weight is above 80 kg 
+delete from teacher where weight>80.0
+
+delete teacher whose whose height is below 5.3 inch
+delete from teacher where height<5.3
+
+
+how to empty table? 
+to empty table (delete all rows), truncate table command 
+truncate table <tablename>
+example 
+truncate table teacher
+
+when we truncate table, primary key will reset to zero 
+
+how to delete table?
+delete table means delete both data and table structure. for this we use 
+drop table <tablename> command 
+drop table teacher 
+
+----------------------------------------------------------------------------
+
+how to update existing rows in table? 
+to update/change values in existing table, we use update table command 
+
+syntax 
+UPDATE <table_name> SET column1 = value1, column2 = value2, ... [WHERE condition/relational expression];
+
+Example 
+update teacher table, increase height of all teacher by 1 feet 
+update teacher set height=height+1 
+
+Note :- if we dont use where clause in update or delete command, then mysql update/delete all rows
+
+update teacher table, change weight to 100 kg of teacher rahul sharma 
+update teacher set weight=100 where fullname='rahul sharma'
+
+update teacher table, set name to "monika sharma", gender to female of teacher whose id is 1 
+update teacher set fullname='monika sharma', gender='female' where id=1
+
+-------------------------------------------------------------------------
+how to fetch/read data from table?
+to fetch data from table, we use select SQL command 
+
+syntax 
+SELECT *|column_name1, column_name2, ...
+FROM table_name
+[WHERE condition]
+[ORDER BY column_name]
+[group by column_name ]
+[having column_name]
+[LIMIT number_of_rows];
