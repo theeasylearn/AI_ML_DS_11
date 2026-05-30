@@ -1,0 +1,107 @@
+ 1. Line Chart
+
+Create a line chart to display the number of ODI matches played each year in men's cricket from 2000 to 2025.
+
+ 2. Line Chart
+
+Create a line chart to display the number of Test matches played each year in men's cricket from 2000 to 2025.
+
+ 3. Line Chart
+
+Create a line chart to display the number of T20 matches played each year in men's cricket from 2000 to 2025.
+
+ 4. Line Chart
+
+Create a line chart to display the number of ODI, Test, and T20 matches played each year in men's cricket from 2000 to 2025.
+
+ 5. Scatter Chart
+
+Create a scatter chart showing Team India's total score in all T20I matches played so far.
+
+ 6. Scatter Chart
+
+Create a scatter chart displaying the number of plane crashes per month from 2000 to 2025.
+
+ 7. Bar Chart
+
+Create a bar chart showing the yearly gold price increase from 2010 to 2025.
+
+ 8. Bar Chart
+
+Create a bar chart showing the annual Sensex return from 2010 to 2025.
+
+ 9. Bar Chart
+
+Create a grouped bar chart showing the yearly price increase of gold and silver from 2010 to 2025 (non-overlapping bars).
+
+ 10. Bar Chart
+
+Create a grouped bar chart showing the GDP growth rates of India and China from 2010 to 2025 (non-overlapping bars).
+
+ 11. Pie Chart
+
+Create a pie chart showing the percentage of students in Gujarat who opted for Commerce, Arts, Science, and Diploma after the 10th standard.
+
+ 12. Pie Chart
+
+Create a pie chart showing the smartphone market share of Realme, Redmi, Oppo, Vivo, Samsung, Apple, Nokia, and others.
+
+ 13. Step Chart
+
+Create a step chart showing the prices of gold, silver, and copper over the last 25 years.
+
+ 14. Step Chart
+
+Create a step chart showing changes in Nifty and Sensex over time.
+
+ 15. Step Chart
+
+Create a step chart showing the percentage growth of Bitcoin and Ethereum.
+
+ 16. Contour Chart
+
+Create a contour chart showing longitude, latitude, and internet signal strength.
+
+ 17. Contourf Chart
+
+Create a contourf chart showing sugar quantity (grams), tea boiling time (minutes), and user ratings.
+
+ 18. Error Bar Chart
+
+Create an error bar chart showing the scores of all IPL teams in the 2026 season.
+
+ 19. Error Bar Chart
+
+Create an error bar chart showing the sales performance of 5 products over 30 days.
+
+ 20. Stacked Bar Chart
+
+Create a stacked bar chart showing the Indian Government budget allocation across the following categories:
+
+ Interest Payments
+ States' Share of Taxes & Duties
+ Central Sector Schemes
+ Defence
+ Centrally Sponsored Schemes
+ Finance Commission & Other Transfers
+ Subsidies
+ Pensions
+ Capital Expenditure
+ Rural Development
+
+ 21. Polar Chart
+
+Create a polar chart showing the number of runs scored by Virat Kohli in different field directions.
+
+ 22. Candlestick Chart
+
+Create a candlestick chart showing the movement of the BSE Sensex over the last 30 days. Read the data from a CSV file and display a candle for each trading day.
+
+ 23. Dashboard (Multiple Charts)
+
+Create a dashboard containing 4 different chart types on a single screen. All charts should represent different aspects of the same topic. For example:
+
+ Line Chart: Monthly sales trend
+ Bar Chart: Product-wise sales
+ Pie Chart: Market share by product
+ Scatter Chart: Sales vs Profit analysis
