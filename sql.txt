@@ -212,9 +212,59 @@ to fetch data from table, we use select SQL command
 
 syntax 
 SELECT *|column_name1, column_name2, ...
-FROM table_name
-[WHERE condition]
-[ORDER BY column_name]
-[group by column_name ]
-[having column_name]
-[LIMIT number_of_rows];
+FROM table_name [WHERE condition] [ORDER BY column_name] [group by column_name ] 
+[having column_name] [LIMIT number_of_rows];
+
+fetch all rows and all column from table 
+fetch all teachers's table fields and rows 
+
+----------------------------------------------------------
+select * from teachers 
+
+fetch only selected fields & all rows 
+----------------------------------------------
+fetch id, fullname and mobile 
+select id,fullname,mobile from teacher 
+
+fetch id,height,weight,gender from teacher 
+select id,height,weight,gender from teacher 
+
+fetch data in some specific sequence (change order of row)
+----------------------------------------------
+fetch teacher's detail (all fields) name wise in ascending order 
+select * from teacher order by fullname asc 
+OR 
+select * from teacher order by fullname 
+
+fetch teacher's detail (all fields) weight wise in descending order 
+select * from teacher order by weight desc 
+
+we can use more then one fields with order by clause 
+fetch teacher's detail (all fields) height wise and weight wise in  order
+select * from teacher order by height, weight 
+
+Limit no of rows fetched from table.
+----------------------------------------------
+fetch 1st 10 teacher's details
+select * from teacher limit 0,10
+
+fetch next 10 teacher's details
+select * from teacher limit 10,10
+
+fetch next 10 teacher's details
+select * from teacher limit 20,10
+
+use Limit & order by together 
+----------------------------------------------
+fetch 10 youngest teacher's detail 
+select * from teacher order by dob desc limit 0,10
+
+fetch id, name, height of 10 tallest teacher
+select id,fullname,height from teacher order by height desc limit 0,10
+
+fetch id, name, weight of 10 least weight teacher
+select id,fullname, weight from teacher order by weight limit 0,10
+
+find most heaviest teacher and display detail 
+select * from teacher order by weight desc limit 0,1
+
