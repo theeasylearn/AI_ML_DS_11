@@ -20,23 +20,18 @@ Create a scatter chart showing Team India's total score in all T20I matches play
 
  6. Scatter Chart
 
-Create a scatter chart displaying the number of plane crashes per month from 2000 to 2025.
+Create a scatter chart displaying the age of patient at the time of death in covid 19.
+Create a scatter chart displaying the score of RCB in each match since 2025.
 
- 7. Bar Chart
 
-Create a bar chart showing the yearly gold price increase from 2010 to 2025.
+ 7. Barh Chart
 
- 8. Bar Chart
+Create a bar chart showing the yearly gold price increase Rate from 2010 to 2025.
+
+8. Barh Chart
 
 Create a bar chart showing the annual Sensex return from 2010 to 2025.
 
- 9. Bar Chart
-
-Create a grouped bar chart showing the yearly price increase of gold and silver from 2010 to 2025 (non-overlapping bars).
-
- 10. Bar Chart
-
-Create a grouped bar chart showing the GDP growth rates of India and China from 2010 to 2025 (non-overlapping bars).
 
  11. Pie Chart
 
