@@ -23,6 +23,12 @@ Create a scatter chart showing Team India's total score in all T20I matches play
 Create a scatter chart displaying the age of patient at the time of death in covid 19.
 Create a scatter chart displaying the score of RCB in each match since 2025.
 
+BoxPlot chart 
+Create a BoxPlot chart that display marks of 4 different division of school. each division is list that has marks of 50 students. 
+    A division marks range 40 to 50
+    B division marks range 51 to 65
+    C division marks range 66 to 80
+    D division marks range 81 to 90
 
  7. Barh Chart
 
