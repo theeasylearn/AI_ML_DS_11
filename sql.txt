@@ -268,3 +268,42 @@ select id,fullname, weight from teacher order by weight limit 0,10
 find most heaviest teacher and display detail 
 select * from teacher order by weight desc limit 0,1
 
+fetch records from table as per condition (filter records)
+to fetch records/rows from tables, as per condition we use where clause. 
+
+fetch only male teacher's id,name,email,gender  
+select id,fullname,email,gender from teacher where gender='male'
+
+fetch only  teacher's id,name,email,gender,height whose height is above 5.7 inch 
+select id,fullname,email,gender,height from teacher where height>5.7
+
+fetch only  teacher's id,name,email,gender,height whose height in range of 6 to 6.5 inch 
+select id,fullname,email,gender,height from teacher where height>=6 and height<=6.5
+
+or
+select id,fullname,email,gender,height from teacher where height between 6.0 and 6.5;
+
+fetch only  teacher's id,name,email,gender,height whose id is 1 or 3 or 5 or 7 
+select id,fullname,email,gender,height from teacher where id=1 or id=3 or id=5 or id=7
+OR 
+select id,fullname,email,gender,height from teacher where id in (1,3,5,7)
+
+fetch only  teacher's id,name,email,gender,height whose id is not 1 or 3 or 5 or 7 
+select id,fullname,email,gender,height from teacher where id!=1 and id!=3 and id!=5 and id!=7
+
+or 
+select id,fullname,email,gender,height from teacher where id not in(1,3,5,7)
+
+fetch teacher id,fullname,height and weight of those teacher whose height is above 6 feet and weight is below 90 kg. 
+select id,fullname,height,weight from teacher where height>6 and weight<90
+
+fetch teacher's id,fullname,dob from teacher of those teacher whose dob is above 1984 and below 1991 and display dob wise in ascending order 
+
+select id,fullname,dob from teacher where dob>='1985-01-01' and dob<='1990-12-31' order by dob 
+
+select id,fullname,date_format(dob,'%d-%m-%Y') from teacher where dob>='1985-01-01' and dob<='1990-12-31' order by dob;
+
+
+fetch customer's detail of those customers whose name has wheels anywhere 
+select * from customers where customerName like '%Wheels%'
+
