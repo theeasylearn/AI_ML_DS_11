@@ -303,7 +303,97 @@ select id,fullname,dob from teacher where dob>='1985-01-01' and dob<='1990-12-31
 
 select id,fullname,date_format(dob,'%d-%m-%Y') from teacher where dob>='1985-01-01' and dob<='1990-12-31' order by dob;
 
+use company database 
+--------------------------------------------------------------------------------
 
 fetch customer's detail of those customers whose name has wheels anywhere 
 select * from customers where customerName like '%Wheels%'
+
+fetch customer's detail of those customers whose name has wheels at starting 
+select * from customers where customerName like 'Wheels%'
+
+fetch customer's detail of those customers whose name has wheels at ending 
+select * from customers where customerName like '%Wheels'
+
+fetch payment details received in 2004, display date wise 
+select * from payments where paymentdate>='2004-01-01' and paymentdate<='2004-12-31' order by paymentdate limit 0,1000
+
+display date in indian format in above sql statement 
+select customerNumber,checkNumber,date_format(paymentdate,'%d-%m-%Y') as payment_date,amount from payments where paymentdate>='2004-01-01' and paymentdate<='2004-12-31' order by paymentdate limit 0,1000
+
+Aggrigate functions 
+---------------------------------------
+1. COUNT()
+Counts the number of rows.
+Syntax
+SELECT COUNT(column_name) FROM table_name;
+
+Example 
+count how many payments received 
+select count(*) from payments 
+
+count how many customers 
+select count(*) from customers
+
+count how many orders 
+select count(*) as total_orders from orders 
+
+Example
+
+SELECT COUNT(*) AS total_employees
+FROM employees;
+
+2. SUM()
+Calculates the total of numeric value (sum) of given numeric field.
+Syntax
+SELECT SUM(column_name) FROM table_name;
+
+
+Example
+find & display total payment received so far 
+select sum(amount) as total_payment from payments 
+
+findout & display total order amount 
+select sum(priceEach * quantityOrdered) as total_order_amount from orderdetails 
+
+3. AVG()
+Calculates the average value of numeric field .
+Syntax
+SELECT AVG(column_name) FROM table_name;
+
+Example
+findout & display average order amount 
+select avg(priceEach * quantityOrdered) as average_order from orderdetails
+findout & display payment amount 
+select avg(amount) as average_payment from payments 
+select round(avg(amount),2) as average_payment from payments 
+
+4. MIN()
+Returns the smallest value of numeric field .
+Syntax
+SELECT MIN(column_name) FROM table_name;
+Example
+findout & display minimum payment amount 
+select min(amount) as minimum_amount from payments 
+
+findout & display minimum order amount 
+select min(priceEach * quantityOrdered) as minimum_order from orderdetails
+
+5. MAX()
+Returns the largest value of numeric field .
+Syntax
+SELECT MAX(column_name) FROM table_name;
+
+Example
+findout and display largest payment amount 
+select max(amount) as maximum_amount from payments 
+
+findout & display maximum order amount 
+select max(priceEach * quantityOrdered) as maximum_order  from orderdetails
+
+
+Aggrigate functions with where clause
+---------------------------------------
+findout & display customerNumber and total payment amount of customerNumber 112
+select sum(amount) from payments where customerNumber=112
 
