@@ -397,3 +397,52 @@ Aggrigate functions with where clause
 findout & display customerNumber and total payment amount of customerNumber 112
 select sum(amount) from payments where customerNumber=112
 
+findout & display count of customers of usa (how many customers from usa)
+select count(*) from customers where country='usa'
+
+findout & display minimum, maximum, average payment made by customerNumber 114
+select min(amount), max(amount), avg(amount) from payments where customerNumber=114
+
+findout & display minimum, maximum, average,total  payment in year 2004
+select min(amount), max(amount), avg(amount), sum(amount) from payments where 
+paymentdate>='2004-01-01' and paymentdate<='2004-12-31'
+
+
+Group by : -
+---------------------------------------
+The GROUP BY clause in MySQL is used to group rows that have the same values in one or more columns. It is commonly used with aggregate functions such as COUNT(), SUM(), AVG(), MAX(), and MIN().
+
+Examples 
+-----------------------
+display customer wise total payment amount 
+select customerNumber,sum(amount) from payments group by customerNumber
+
+display year wise total payment amount 
+select left(paymentdate,4) as year ,sum(amount) as 'total_payment' from payments group by left(paymentdate,4)
+
+display count of orders & customerNumber received by each customers.
+select customerNumber,count(*) from orders group by customerNumber
+
+display count of orders  & customerNumber received by each customers. display customer with maximum orders first 
+select customerNumber,count(*) from orders group by customerNumber order by count(*) desc 
+
+display count of items in each order 
+select orderNumber,count(*) from orderdetails group by orderNumber
+
+display each orders amount in descending order of amount 
+select orderNumber, sum(priceEach * quantityOrdered) as order_amount from orderdetails group orderNumber
+
+display product code wise total sales amount 
+select productCode,sum(priceEach * quantityOrdered) as total_sales from orderdetails group by productCode
+
+Having Caluse : -
+----------------------------------
+The HAVING clause in MySQL is used to filter grouped data. It works with the GROUP BY clause and is typically used with aggregate functions like COUNT(), SUM(), AVG(), MAX(), and MIN().
+
+example 
+display customer wise total payment amount of those customers who have paid more then 500000
+
+select customerNumber,sum(amount) from payments group by customerNumber having sum(amount)>500000
+
+display count of orders & customerNumber received by each customers of those customer who have given more then 5 orders .
+select customerNumber,count(*) from orders group by customerNumber having count(*)>5
