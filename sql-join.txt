@@ -1,0 +1,68 @@
+how to fetch data from multiple tables. 
+---------------------------------------
+when we fetch data from multiple tables, then it is called join operations between tables. first of all of there are many type of join we can use between tables 
+
+
+Ram has toys 
+    A,B,C,D, 
+
+Shyam has toys 
+    C,D,E,F 
+
+
+1) equi/Inner join 
+    when we want to fetch data from multiple tables based upon common fields value between tables it is called equi join. here equi join fetch only matching row from both tables means rows which has same value in common fields  
+
+2) Left join 
+   we want to fetch data from two tables, we want to fetch all rows from left side table where we want to fetch only matching rows from right side tables based upon common field 
+
+3) Right join 
+   we want to fetch data from two tables, we want to fetch all rows from right side table and we want to fetch only matching rows from left side tables based upon common field 
+
+4) full join 
+    we want to fetch all rows from two tables without giving any condition on common fields at that time we use full join. it do cartisan product operation on both tables.
+
+Examples
+------------------------------------------
+fetch all customerNumber,customerName and paymentDate, amount & show them amount wise in descending order 
+
+1st figure which fields belongs to which tables 
+    customerNumber,customerName is in customers table 
+    paymentDate, amount is in payment table 
+
+2nd fetch these columns from corresponding tables 
+    select customerNumber,customerName from customers
+    select paymentDate, amount from payments
+
+3rd join them 
+    select c.customerNumber,customerName,paymentDate, amount from customers c, payments p where c.customerNumber = p.customerNumber order by amount desc limit 0,1000
+
+fetch all orders number, orderDate, status, productCode, price and quantity and display them orderdate wise 
+
+1st figure which fields belongs to which tables 
+    orderNumber,orderDate, status, is in orders table 
+    productCode, price and quantity is in orderdetails table 
+
+2nd fetch these columns from corresponding tables 
+    select orderNumber,orderDate, status from orders
+    select productCode, priceEach , quantityOrdered from orderdetails
+
+3rd join them 
+     select o.orderNumber,orderDate, status, productCode, priceEach , quantityOrdered  from orders o, orderdetails d where o.orderNumber=d.orderNumber order by orderdate 
+
+
+fetch customerNumber,customerName, orderdate, orderNumber, productCode, price, quantity of orders and display them customerNumber wise 
+
+1st figure which fields belongs to which tables 
+    customerNumber,customerName is in customers table 
+    orderNumber,orderDate, is in orders table 
+    productCode, price and quantity is in orderdetails table 
+
+2nd fetch these columns from corresponding tables 
+    select customerNumber,customerName from customers 
+    select  orderNumber,orderDate from orders 
+    select productCode, priceEach, quantityOrdered from orderdetails
+
+3rd join 
+    select c.customerNumber,customerName,o.orderNumber,orderDate,productCode, priceEach, quantityOrdered  from customers c, orders o,  orderdetails d where c.customerNumber = o.customerNumber and o.orderNumber = d.orderNumber order by c.customerNumber
+
