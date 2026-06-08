@@ -49,8 +49,6 @@ X, Y = np.meshgrid(months, fine_elevations)
 # Generate a filled contour map with 25 levels using a reversed Red-Yellow-Blue palette
 contour = ax.contourf(X, Y, grid_temps, levels=25, cmap='RdYlBu_r')
 
-
-
 # Format the color bar
 cbar = fig.colorbar(contour, ax=ax)
 cbar.set_label('Average Temperature (°C)', fontsize=12)
