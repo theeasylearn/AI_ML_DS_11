@@ -66,3 +66,47 @@ fetch customerNumber,customerName, orderdate, orderNumber, productCode, price, q
 3rd join 
     select c.customerNumber,customerName,o.orderNumber,orderDate,productCode, priceEach, quantityOrdered  from customers c, orders o,  orderdetails d where c.customerNumber = o.customerNumber and o.orderNumber = d.orderNumber order by c.customerNumber
 
+
+fetch productCode, ProductName, quantityOrdered and priceEach and orderNumber and display them orderNumber wise 
+
+1st figure out which fields belongs to which tables 
+    productCode, ProductName is in products 
+    quantityOrdered and priceEach and orderNumber from orderdetails 
+
+2nd fetch these columns from corresponding tables 
+    select productCode,ProductName from products 
+    select orderNumber,quantityOrdered,priceEach from orderdetails
+
+3rd join
+    select p.productCode,ProductName,orderNumber,quantityOrdered,priceEach from products p, orderdetails od where p.productCode = od.productCode order by orderNumber
+
+
+Display customerNumber,customerName, and orderNumber and each order total order amount
+
+1st figure out which fields belongs to which tables 
+    customerNumber,customerName is in customers
+    orderNumber, order total order amount is in orderdetails
+    we will fetch one field from order table (connector table )
+
+2nd fetch these columns from corresponding tables 
+    select customerNumber,customerName from customers 
+    select orderNumber, sum(quantityOrdered * priceEach) from orderdetails group by orderNumber
+    select orderNumber from orders 
+
+3d join them 
+select c.customerNumber,customerName,o.orderNumber, sum(quantityOrdered * priceEach) as 'total_order_amount' from customers c, orderdetails od, orders o where c.customerNumber = o.customerNumber and o.orderNumber = od.orderNumber group by orderNumber order by c.customerNumber;
+
+Display customerNumber,customerName, and unique ProductName ordered 
+
+1st figure out which fields belongs to which tables 
+customerNumber,customerName is in customers
+productName is in product table 
+
+2nd fetch these columns from corresponding tables 
+ select customerNumber,customerName from customers
+ select productName from products 
+
+3rd join 
+
+select c.customerNumber,customerName,productName from customers c,  products p, orders o, orderdetails od where c.customerNumber = o.customerNumber and o.orderNumber = od.orderNumber group o.orderNumber
+
