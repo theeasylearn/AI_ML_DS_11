@@ -9,6 +9,17 @@ Ram has toys
 Shyam has toys 
     C,D,E,F 
 
+Ram and Shyam 
+LEFT  JOIN 
+A, B, C, D 
+Shyam
+Null Null C, D
+
+Ram and Shyam 
+RIGHT  JOIN 
+C, D , None, None 
+Shyam
+C,D,E,F 
 
 1) equi/Inner join 
     when we want to fetch data from multiple tables based upon common fields value between tables it is called equi join. here equi join fetch only matching row from both tables means rows which has same value in common fields  
@@ -109,4 +120,63 @@ productName is in product table
 3rd join 
 
 select c.customerNumber,customerName,productName from customers c,  products p, orders o, orderdetails od where c.customerNumber = o.customerNumber and o.orderNumber = od.orderNumber group o.orderNumber
+
+LEFT join 
+--------------------------
+fetch only those customers Number and Name who has never given order
+
+
+1st figure out fields and corresponding tables 
+    fetch customerNumber, customerName from customers
+    fetch orderNumber from orders 
+
+2nd fetch these columns from corresponding tables 
+    select customerNumber, customerName from customers
+    select orderNumber from orders 
+
+join them 
+
+select c. customerNumber, customerName,orderNumber from customers c left join orders o on 
+c.customerNumber = o.customerNumber where orderNumber IS Null
+
+fetch only those customers Number and Name who has never given payments 
+
+1st figure out fields and corresponding tables 
+    fetch customerNumber, customerName from customers 
+    fetch customerNumber, checkNumber from payments 
+
+2nd fetch these columns from corresponding tables 
+    select customerNumber, customerName from customers
+    select checkNumber from payments  
+
+join them 
+    select c.customerNumber, customerName,checkNumber from customers c left join payments p on c.customerNumber = p.customerNumber where checkNumber is null 
+
+Right Join 
+fetch officecode and city of those office in which no employee is working. 
+
+1st figure out fields and corresponding tables 
+    fetch officecode and city from offices 
+    fetch employeeNumber from employees 
+
+2nd fetch these columns from corresponding tables   
+    select officecode, city from offices;
+    select employeeNumber from employees	
+
+join them 
+     select employeeNumber,officecode, city from employees e right join offices f on f.officecode = e.officecode select employeeNumber,f.officecode, city from employees e right join offices f on f.officecode = e.officecode where employeeNumber is null;
+
+fetch productCode & ProductName of those product whose order is not received 
+
+1st figure out fields and corresponding tables 
+fetch productCode & ProductName from products 
+fetch orderNumber  from orderdetails 
+
+2nd fetch these columns from corresponding tables   
+select productCode, ProductName from products 
+select orderNumber from orderdetails
+
+join them 
+select orderNumber,od.productCode, ProductName from orderdetails od right join products p on od.productCode = p.productCode where orderNumber is Null;
+
 

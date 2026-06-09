@@ -1,0 +1,101 @@
+Database: `company`
+
+1. List all customers along with their sales representative's first name and last name (equi join on `salesRepEmployeeNumber`).
+
+2. Find all orders placed by customers from 'USA'. Show `orderNumber`, `customerName`, and `orderDate`.
+
+3. Display product details (`productName`, `productLine`) along with the product line's text description.
+
+4. Show all employees and their office city and country.
+
+5. List all payments with the corresponding customer name and amount.
+
+6. Find all order details (`orderNumber`, `productCode`, `quantityOrdered`) with the product name.
+
+7. Show customers from 'France' and their sales rep's job title.
+
+8. Display all products in the 'Classic Cars' product line with their buy price and MSRP.
+
+9. List employees who report to 'Diane Murphy' (use equi join on `reportsTo`).
+
+10. Show all orders that are 'Shipped' along with the customer name.
+
+11. List all customers and their sales representative's name (use LEFT JOIN). Include customers who have no sales rep.
+
+12. Show all employees and the customers they manage (use LEFT JOIN). Include employees with no customers.
+
+13. List all products and how many times they have been ordered (use LEFT JOIN with `orderdetails`).
+
+14. Show all offices and the number of employees in each office (use LEFT JOIN).
+
+15. Display all customers and their total payment amount (use LEFT JOIN with `payments`).
+
+16. Use RIGHT JOIN to show all employees and any customers they represent.
+
+17. Use LEFT JOIN to list all product lines and the products in them.
+
+18. Show all orders and the customer name, including orders without a matching customer (if any).
+
+19. Find the total number of orders per customer. Show `customerName` and order count.
+
+20. Calculate total sales amount (sum of `priceEach * quantityOrdered`) per product line.
+
+21. Find the average credit limit of customers by country.
+
+22. Show the number of employees per office city.
+
+23. Find the total payment amount received from each customer.
+
+24. Count how many products are in each product line.
+
+25. Find the total quantity ordered for each product (top 5 by quantity).
+
+26. Find customers who have placed more than 5 orders.
+
+27. Show product lines where the average MSRP is greater than 100.
+
+28. Find sales reps (employees) who have managed more than 10 customers.
+
+29. List countries where the total payment amount exceeds 500,000.
+
+30. Find offices that have more than 5 employees.
+
+31. List customers sorted by their total payment amount (highest first).
+
+32. Show product lines sorted by the number of products in them (descending).
+
+33. Display employees sorted by the number of customers they manage.
+
+34. List countries with their total credit limit (sorted descending).
+
+35. Show the top 10 most ordered products by total quantity.
+
+36. Show the top 5 customers by credit limit.
+
+37. List the 10 most expensive products (by MSRP).
+
+38. Show the 5 offices with the most employees.
+
+39. Display the 10 largest orders by total value (`priceEach * quantityOrdered`).
+
+40. Find the 5 customers with the highest total payments.
+
+41. For each sales rep, show the total sales amount they generated (join `employees` → `customers` → `orders` → `orderdetails`). Sort by total sales descending.
+
+42. Find customers who have never placed an order (use LEFT JOIN).
+
+43. Show product lines where total quantity sold is greater than 10,000 (use multiple joins + GROUP BY + HAVING).
+
+44. List the top 5 customers by total order value in 2004.
+
+45. Find employees who have no customers assigned and work in offices with more than 3 employees.
+
+46. Calculate the total revenue per country (join customers → orders → orderdetails). Show only countries with revenue > 200,000. Sort descending.
+
+47. Show the sales performance of each office: number of orders, total revenue, and average order value.
+
+48. Find products that have been ordered by customers from more than 3 different countries.
+
+49. List sales reps whose customers have an average credit limit higher than the company average.
+
+50. For each product line, show: Total products, Total quantity sold, Total revenue, Average price per unit sold. Filter lines with revenue > 500,000. Sort by revenue descending.
