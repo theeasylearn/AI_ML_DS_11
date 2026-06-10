@@ -180,3 +180,7 @@ join them
 select orderNumber,od.productCode, ProductName from orderdetails od right join products p on od.productCode = p.productCode where orderNumber is Null;
 
 
+fetch & employeeNumber,firstname,lastname,officeCode, city,state,country all possible combination. 
+
+select employeeNumber,firstname,lastname,officeCode,city, state, country from employees e, offices o 
+

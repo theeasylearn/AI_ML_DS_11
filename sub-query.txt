@@ -1,0 +1,50 @@
+sub query
+----------------------------------------------
+when we use one select statement into another select statement, it is called subquery. there are always at least 2 select statement in subquery
+    1 select statement will display data, which is called outer select statement 
+    2 one or more select statement provide value for condition given in outer select, such statement is called inner select statement or sub query.
+
+fetch customerNumber,customerName,country of those customers who are from country to which star toys belongs 
+
+fetch star toys country 
+select country  from customers where customerName='star toys'
+select customerNumber,customerName,country  from customers where country='Australia'
+
+combine 
+select customerNumber,customerName,country  from customers where country=( select country  from customers where customerName='star toys') and customerName!='star toys'
+
+fetch orderNumber, orderDate, status, customerNumber of those order which is received on same date on which order number 10425 is also received
+
+select orderDate from orders where orderNumber=10425
+select orderNumber, orderDate, status, customerNumber from orders where orderDate='2005-05-31'
+
+
+combine 
+select orderNumber, orderDate, status, customerNumber from orders where orderDate=(select orderDate from orders where orderNumber=10425) and orderNumber !=10425
+
+fetch payment details of minimum payment amount 
+-----------------------------------------------
+select min(amount) from payments 
+select * from payments where amount = 600
+
+combine
+select * from payments where amount = (select min(amount) from payments )
+
+
+fetch payment details of above average payment amount 
+select avg(amount) from payments 
+select * from payments where amount > 32376
+
+combine 
+-------------
+select * from payments where amount > (select avg(amount) from payments )
+
+
+fetch orderdetails of those orders which contains on or more items ordered in orderNumber 10100
+
+select productCode from orderdetails where orderNumber=10100
+select * from orderdetails where productCode in ('S18_1749','S18_2248','S18_4409','S24_3969')
+
+combine 
+select * from orderdetails where productCode in (select productCode from orderdetails where orderNumber=10100)
+ 
