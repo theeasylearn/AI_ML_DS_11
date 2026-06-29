@@ -1,27 +1,57 @@
 import products as p
 import connection as database 
 def AddBillItem():
-    #create sql statement 
-    sql = "INSERT INTO `bill_items`(productid,quantity,rate) VALUES (%s,%s,%s)"
-    # %s is called placeholder 
     #accept input from user 
     p.ViewProducts()
     id = input("Enter Product id")
-    price = int(input("Enter product price"))
-    quantity = int(input("Enter quantity"))
+    # price = int(input("Enter product price"))
+    # fetch price of the given product id 
+    result = p.getPrice(id) #get primary method may return 0 or tuple
+    #check result is normal variable or tuple
+    if isinstance(result,tuple) == False and result == 0: #product not found
+        print("Product not found")
+    else:
+        price, stock = result
+        quantity = int(input("Enter quantity"))
+        if quantity>stock:
+            print(f"sorry, available stock is {stock} unit")
+        else:
+            #create list whose size must be equal to total placeholder 
+            #create sql statement 
+            sql = "INSERT INTO `bill_items`(productid,quantity,rate) VALUES (%s,%s,%s)"
+            # %s is called placeholder 
+            values = [id,quantity,price]
+            #create cursor 
+            cursor = database.connect.cursor()
 
-    #create list whose size must be equal to total placeholder 
-    values = [id,price,quantity]
+            #run sql statement 
+            cursor.execute(sql,values)
+
+            #save changes 
+            database.connect.commit()
+
+            print("Item inserted")
+    key = input("Press any key to continue")
+
+def DisplayBillItem():
+    sql = "SELECT bi.id 'item_id',name,rate,bi.quantity 'quantity' FROM `bill_items` bi, product p where p.id = productid and billid=0 order by bi.id"
+
     #create cursor 
-    cursor = database.connect.cursor()
+    cursor = database.connect.cursor(dictionary=True)
 
-    #run sql statement 
-    cursor.execute(sql,values)
+    #run sql command 
+    cursor.execute(sql)
 
-    #save changes 
-    database.connect.commit()
-
-    print("Item inserted")
+    #fetch all records 
+    table = cursor.fetchall()
+    if len(table) == 0:
+        print("No bill item found")
+    else:
+        print(f"{'item_id':<10} {'name':<60} {'rate':<10} {'quantity':<10} {'total':<12}")
+        print("_"*110)
+        for row in table:
+            print(f"{row['item_id']:<10} {row['name']:<60} {row['rate']:<10} {row['quantity']:<10} {row['quantity'] * row['rate']:<12}")
+    key = input("Press any key to continue")
 while True:
     print("\nPress 1 for Product management")
     print("Press 2 for Bill management")
@@ -71,7 +101,7 @@ while True:
                 print("Press 2 to delete item from bill")
                 print("Press 3 to search item in bill")
                 print("Press 4 to generate bill")
-                print("Press 5 to view all bills")
+                print("Press 5 to view all bill items ")
                 print("Press 0 to exit to main menu")
                 
                 bill_choice = int(input("enter your choice: "))
@@ -88,7 +118,7 @@ while True:
                     elif bill_choice == 4:
                         print("let us generate bill")
                     elif bill_choice == 5:
-                        print("let us view all bills")
+                        DisplayBillItem()
                     else:
                         print("exit to main menu")
                         break  # break inner loop

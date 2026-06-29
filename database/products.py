@@ -1,12 +1,15 @@
 import connection as database 
 def getPrice(id):
-    sql = "select price from product where id = %s";
+    sql = "select price,quantity from product where id = %s";
     data = [id]
     cursor = database.connect.cursor(dictionary=True)
     cursor.execute(sql,data)
     table = cursor.fetchall()
     NoofRows = len(table)
-    return NoofRows
+    if NoofRows==0:
+        return 0
+    else:
+        return table[0]['price'],table[0]['quantity']
  
 def SearchProduct():
     name = input("Enter product name")
