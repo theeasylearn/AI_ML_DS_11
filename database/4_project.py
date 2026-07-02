@@ -1,5 +1,41 @@
 import products as p
 import bills as b 
+import connection as database
+def SalesReport():
+      #generate day wise sales report 
+    sql = "SELECT DATE_FORMAT(billdate,'%d-%m-%Y') AS bill_date, DAYNAME(billdate) AS day_name, COUNT(id) AS total_bills, SUM(amount) AS total_sales FROM bill WHERE billdate BETWEEN ? AND ? GROUP BY DATE(billdate), DAYNAME(billdate) ORDER BY DATE(billdate);"
+
+def ProductReport():
+    #fetch product wise report 
+    sql = "SELECT p.id, p.name, SUM(bi.quantity) AS sold_quantity FROM product p, bill_items bi, bill b WHERE p.id = bi.productid AND bi.billid = b.id AND b.billdate BETWEEN '2026-06-01' AND '2026-06-30' GROUP BY p.id, p.name ORDER BY sold_quantity DESC;"
+
+def MonthlyReport():
+     #fetch last 30 days
+    sql = "SELECT COUNT(DISTINCT b.id) AS total_bills, COUNT(*) AS total_items, (SELECT SUM(amount) FROM bill WHERE billdate >= CURDATE() - INTERVAL 29 DAY AND billdate < CURDATE() + INTERVAL 1 DAY) AS total_bill_amount FROM bill b, bill_items bi WHERE b.id = bi.billid AND b.billdate >= CURDATE() - INTERVAL 29 DAY AND b.billdate < CURDATE() + INTERVAL 1 DAY;"
+
+    displayReport(sql)
+
+def WeeklyReport():
+     #fetch last 7 days 
+    sql = "SELECT COUNT(DISTINCT b.id) AS total_bills, COUNT(*) AS total_items, (SELECT SUM(amount) FROM bill WHERE billdate >= CURDATE() - INTERVAL 6 DAY AND billdate < CURDATE() + INTERVAL 1 DAY) AS total_bill_amount FROM bill b, bill_items bi WHERE b.id = bi.billid AND b.billdate >= CURDATE() - INTERVAL 6 DAY AND b.billdate < CURDATE() + INTERVAL 1 DAY;"
+
+    displayReport(sql)
+
+def DailyReport():
+    # fetch today data
+    sql = "SELECT COUNT(DISTINCT b.id) AS total_bills, COUNT(*) AS total_items, ( SELECT (amount) FROM bill WHERE DATE(billdate) = CURDATE()) AS total_bill_amount FROM bill b,bill_items bi where b.id = bi.billid and DATE(b.billdate) = CURDATE();"
+    displayReport(sql)
+
+def displayReport(sql):
+    #create cursor 
+    cursor = database.connect.cursor(dictionary=True)
+
+    #run sql statement
+    cursor.execute(sql)
+
+    #fetch all row 
+    table = cursor.fetchall()
+    
 while True:
     print("\nPress 1 for Product management")
     print("Press 2 for Bill management")
@@ -75,8 +111,8 @@ while True:
             while True:
                 # Daily, Weekly, Monthly, Product, Sales Reports
                 print("\nPress 1 to generate daily report")
-                print("Press 2 to generate weekly report")
-                print("Press 3 to generate monthly report")
+                print("Press 2 to generate last 7 days report")
+                print("Press 3 to generate last 30 days report")
                 print("Press 4 to generate product report")
                 print("Press 5 to generate sales report")
                 print("Press 0 to exit to main menu")
@@ -87,7 +123,7 @@ while True:
                     print("invalid choice")
                 else:
                     if report_choice == 1:
-                        print("let us generate daily report")
+                        DailyReport()
                     elif report_choice == 2:
                         print("let us generate weekly report")
                     elif report_choice == 3:
