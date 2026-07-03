@@ -1,0 +1,11 @@
+# Changes Log
+# Format: [Timestamp] - Description of modifications
+
+[2026-07-03 09:19:00] - Refactored 4_project.py:
+  1. Extracted all report-related functions into a newly created reports.py module.
+  2. Modified choice 3 to invoke reports.DailyReport(), reports.WeeklyReport(), reports.MonthlyReport(), reports.ProductReport(), and reports.SalesReport() instead of stub strings.
+  3. Wrapped the main menu interaction loop inside a try-except block to capture and print runtime errors.
+  4. Implemented a log_error() helper to record exceptions with tracebacks to error.log.
+  5. Implemented a dynamic displayReport(sql, params) function in reports.py that auto-computes optimal column widths and prints clean table headers and values.
+  6. Completed SalesReport() and ProductReport() with console date inputs and parameterized SQL queries.
+  7. Corrected a subquery bug in DailyReport() to prevent MySQL operand errors when multiple bills exist for the same day.
