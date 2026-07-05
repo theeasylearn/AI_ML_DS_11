@@ -1,0 +1,32 @@
+a1st project - without major use of AI. 
+code generation must not be done using AI.
+for particular problem you can use AI. 
+
+trip income expense tracker application
+----------------------------------------
+
+tour(trip)
+---------------------
+id,title,detail,start_date,days,adult_rate,child_rate,is_deleted,inserted_at
+
+
+transaction
+--------------------------------
+id,tourid,amount,flag(1=income,2=expense),description,challanno,trandate,is_deleted,inserted_at
+
+
+tour management 
+------------------------
+    insert,update,delete (update operation),view
+
+transaction management
+-------------------------
+    insert,view,delete (update operation),search
+
+report management
+-------------------------
+    1) month wise income expense report 
+    2) quarter wise income expense report 
+    3) year wise income expense report 
+    4) tour wise income expense report (tour id will be given by user)
+    5) tour wise income expense report (all tour)

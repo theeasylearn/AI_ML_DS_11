@@ -1,0 +1,32 @@
+Lecture's Payment management system
+---------------------------------
+you can use AI to generate 80% of the project. (cursor/antigravity)
+Tables 
+    course (id,title,fees,duration,description)
+    batch (id,courseid,startdate,enddate,classtime)
+    subject (id,courseid,title,per_hour_rate)
+    teacher (id,name,mobile,email,gender,qualification,experience)
+    lecture(id,teacherid,subjectid,batchid,duration_in_minutes,amount,lecturedate,paymentid(default=0 ))
+    payment(id,paymentdate,teacherid,amount,mode(1=cash,2=cheque,3=online))    
+Notes: delete means update
+Module 
+    course management  
+        insert,update,delete,select,search
+    batch management
+        insert,update,delete,select,search
+    subject management
+        insert,update,delete,select,search
+    teacher management
+        insert,update,delete,select,search
+    lecture management
+        insert,select
+    payout management
+        generate of specific teacher between given date. 
+        generate pdf file of payment send it as email to both admin, teacher 
+    reports
+        generate batch wise lecture detail between given date 
+        generate batch wise lecture detail with total amount
+         
+
+
+
