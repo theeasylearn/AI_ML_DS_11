@@ -5,8 +5,7 @@ import mysql.connector as connector
 
 #create connection 
 try:
-    connect = connector.connect(host='localhost',user='root',passwd='',
-                                database='ai_ml_ds_11',port='3306')
+    connect = connector.connect(host='localhost',user='root',passwd='',database='ai_ml_ds_11',port='3306')
     print('connection created.')
     score = pd.read_sql('select * from score order by overs',con=connect)
 
