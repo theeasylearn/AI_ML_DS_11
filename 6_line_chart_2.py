@@ -7,10 +7,10 @@ import mysql.connector as connector
 try:
     connect = connector.connect(host='localhost',user='root',passwd='',database='ai_ml_ds_11',port='3306')
     print('connection created.')
-    score = pd.read_sql('select * from score order by overs',con=connect)
+    match = pd.read_sql('select * from score_2 order by overs',con=connect)
 
     # print(score)
-    sns.lineplot(x='overs',y='india',data=score,hue='')
+    sns.lineplot(x='overs',y='score',data=match,hue='team')
     plt.xticks(ticks=range(1,21))
     plt.xlabel('overs')
     plt.ylabel('runs')
