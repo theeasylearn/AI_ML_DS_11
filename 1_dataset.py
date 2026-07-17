@@ -8,7 +8,7 @@ for item in datasets:
 choice = input("""Enter dataset name (anagrams,anscombe,attention,brain_networks,car_crashes,diamonds,dots,dowjones,exercise,flights,fmri,geyser,glue,healthexp,iris,mpg,penguins,planets,seaice,taxis,tips,titanic)""")
 if choice in datasets:
     data = sns.load_dataset(choice)
-    print(data.head(1))
+    print(data.head(100))
 '''
 anagrams
 anscombe
