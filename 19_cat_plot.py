@@ -2,8 +2,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns 
 import pandas as pd 
 result = pd.read_csv('marks.csv')
-sns.boxplot(data=result,x='Division',y='Mark')
+sns.catplot(data=result,x='Division',y="Mark",kind='box')
 plt.xlabel("Division")
-plt.ylabel("Mark")
-plt.grid(which='both')
+plt.ylabel('Marks')
 plt.show()
