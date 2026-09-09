@@ -25,3 +25,246 @@ Exercise 3: Calculating Monthly Gym RevenueScenario: A gym owner wants to foreca
 Exercise 4: Estimating Daily Ice Cream SalesScenario: An ice cream parlor owner wants to forecast daily product demand to prevent shortages or food waste.Input Features ($X$):$X_1$: Maximum daily temperature (in Fahrenheit or Celsius)$X_2$: Estimated daily foot traffic count passing the shopTarget Variable ($Y$): Number of ice cream cones sold per dayPractice Goal: Make a prediction for an upcoming hot weekend day with high projected foot traffic.
 
 Exercise 5: Software Developer Salary PredictionScenario: A tech recruitment platform wants to build a pricing model to estimate fair market salaries for software engineers.Input Features ($X$):$X_1$: Years of professional coding experience$X_2$: Number of specialized technical certifications earnedTarget Variable ($Y$): Annual salary (in thousands of dollars)Practice Goal: Evaluate how much value a certification adds to a developer's salary compared to an extra year of experience.
+-------------------------------------------------------------------------------------------
+KMeans algorithm 
+-------------------------------------------------------------------------------------------
+ 1 ECommerce  Retail Customer Segmentation
+
+Features 3
+
+ Annual Spending 
+ Purchase Frequency ordersyear
+ Average Return Rate 
+
+Finding the value of k Elbow Method
+First standardize all three features using zscore Then run KMeans for k  1 to 8 and calculate WCSS From the elbow graph a clear bend can be seen at k  4
+
+Clusters k  4
+
+ Cluster 1  VIP Customers Spend a lot purchase frequently and have a low return rate
+
+ Cluster 2  HighRisk Customers Spend a lot but return many products
+
+ Cluster 3  Regular Budget Customers Spend less but purchase frequently and usually keep their products
+
+ Cluster 4  Occasional Customers Spend less and purchase only a few times
+
+
+
+ 2 Healthcare Patient Risk Grouping
+
+Features 3
+
+ Systolic Blood Pressure mmHg
+ Fasting Blood Glucose mgdL
+ LDL Cholesterol mgdL
+
+Finding the value of k
+For this example we use k  3 because patients can be divided into three simple groups Low Risk Medium Risk and High Risk
+
+Clusters k  3
+
+ Cluster 1  Low Risk Normal blood pressure normal glucose level and low LDL cholesterol
+
+ Cluster 2  Medium Risk Slightly high blood pressure increased glucose level and high LDL cholesterol
+
+ Cluster 3  High Risk High blood pressure very high glucose level and very high LDL cholesterol
+
+
+
+ 3 Telecommunications Mobile User Segmentation
+
+Features 4
+
+ Monthly Data Usage GB
+ Domestic Call Minutes
+ International SMS Count
+ OffPeak Data Usage Ratio
+
+Finding the value of k Elbow Method
+Run KMeans for different values of k and calculate inertia The elbow graph shows a clear bend at k  3
+
+Clusters k  3
+
+ Cluster 1  Heavy Data Users Use a large amount of mobile data but make fewer calls
+
+ Cluster 2  Calling Users Use less data but make many phone calls and send many SMS messages
+
+ Cluster 3  Night Users Use a moderate amount of data especially during offpeak hours
+
+
+
+ 4 Real Estate Housing Area Segmentation
+
+Features 3
+
+ Price per Square Foot ft
+ Distance from Transit Hub km
+ School Rating 110
+
+Finding the value of k
+For this example we choose k  4 to divide housing areas into four groups based on price transportation and school quality
+
+Clusters k  4
+
+ Cluster 1  Premium Areas High property prices and very close to public transport
+
+ Cluster 2  Family Areas Higher property prices but farther from transport with very good schools
+
+ Cluster 3  Average Areas Medium property prices reasonably close to transport and average schools
+
+ Cluster 4  Budget Areas Low property prices far from transport and lower school ratings
+
+
+
+ 5 Agriculture Soil Fertility Grouping
+
+Features 4
+
+ Soil pH
+ Nitrogen mgkg
+ Phosphorus mgkg
+ Electrical Conductivity dSm
+
+Finding the value of k Elbow Method
+Run KMeans for k  1 to 7 and calculate WCSS The elbow appears at k  3
+
+Clusters k  3
+
+ Cluster 1  Poor Soil Low pH and low nitrogen and phosphorus The soil may need additional treatment
+
+ Cluster 2  Good Agricultural Soil Balanced pH with good levels of nitrogen and phosphorus
+
+ Cluster 3  Salty Soil High pH high phosphorus and high electrical conductivity The soil may have excess fertilizer or salt
+
+
+
+ 6 Cybersecurity Network Traffic Grouping
+
+Features 3
+
+ Packet Frequency packetssec
+ Average Packet Size bytes
+ Unique Destination IP Ratio
+
+Finding the value of k
+We choose k  3 to separate normal network traffic from two common types of unusual traffic
+
+Clusters k  3
+
+ Cluster 1  Normal Traffic Normal packet frequency with different packet sizes and normal IP usage
+
+ Cluster 2  Port Scanning Many packets are sent to different IP addresses usually with small and similar packet sizes
+
+ Cluster 3  Heavy Data Transfer Large packets are sent repeatedly usually to one main destination
+
+
+
+ 7 Manufacturing Machine Bearing Condition
+
+Features 2
+
+ Vibration Level g
+ Operating Temperature C
+
+Finding the value of k Elbow Method
+Run KMeans for different values of k The elbow appears at k  3
+
+Clusters k  3
+
+ Cluster 1  Healthy Machine Low vibration and normal operating temperature
+
+ Cluster 2  Machine Wear Higher vibration and temperature which may indicate mechanical problems
+
+ Cluster 3  Critical Condition Very high vibration and temperature indicating that the machine may fail soon
+
+
+
+ 8 Banking Credit Card Transaction Grouping
+
+Features 4
+
+ Transaction Amount 
+ Time Since Previous Transaction seconds
+ Distance from Usual Location km
+ POS Entry Mode
+
+Finding the value of k Elbow Method
+Scale the four features between 0 and 1 and run KMeans for different values of k The elbow appears at k  4
+
+Clusters k  4
+
+ Cluster 1  Normal Transactions Small or medium transactions made at regular intervals and familiar locations
+
+ Cluster 2  Travel Transactions Larger transactions made far away from the customers usual location
+
+ Cluster 3  Card Testing Very small transactions made repeatedly in a short period
+
+ Cluster 4  Suspicious Transactions Large transactions made quickly from unusual locations or using manual entry
+
+
+
+ 9 Sports Analytics Football Midfielder Grouping
+
+Features 3
+
+ Progressive Passes per 90 minutes
+ Defensive Pressures per 90 minutes
+ Distance Covered kmmatch
+
+Finding the value of k
+We choose k  3 because midfielders can be grouped into three common playing styles
+
+Clusters k  3
+
+ Cluster 1  Playmakers Make many forward passes but apply less defensive pressure
+
+ Cluster 2  Defensive Midfielders Make fewer forward passes but apply strong defensive pressure
+
+ Cluster 3  BoxtoBox Players Contribute in both attack and defence and cover a large distance
+
+
+
+ 10 Environmental Science Air Quality Zone Grouping
+
+Features 3
+
+ PM25 gm
+ Nitrogen Dioxide NO
+ Ozone O
+
+Finding the value of k Elbow Method
+Use the average readings from airquality sensors and run KMeans for different values of k The elbow appears at k  3
+
+Clusters k  3
+
+ Cluster 1  Traffic Pollution Areas High NO and PM25 levels mainly because of vehicle traffic
+
+ Cluster 2  Smog Areas High ozone and PM25 levels usually found in sunny and polluted areas
+
+ Cluster 3  Clean Areas Low PM25 and NO levels usually found near parks or green areas
+
+Agglomerative Clustering (Bottom-Up)
+1) Customer Spending SegmentationScenario: A supermarket wants to group customers based on spending habits, starting from individual shoppers and pairing the most similar ones to find broad customer archetypes.Input Features ($X$):$X_1$: Annual income (in thousands of dollars)$X_2$: Average monthly spending score (1-100)Target Variable ($Y$): Assigned customer archetype (e.g., Cluster 0, Cluster 1)Practice Goal: Build a dendrogram to identify 3 main shopper profiles and output the cluster assignments.
+
+2) City Neighborhood ZoningScenario: A city planner wants to group adjacent small blocks into larger municipal zones based on crime rates and property values.Input Features ($X$):$X_1$: Median property value (in thousands of dollars)$X_2$: Crime incidents per 1,000 residentsTarget Variable ($Y$): Assigned municipal zone (Cluster)Practice Goal: Merge similar blocks bottom-up until 2 distinct zones emerge, representing "High-Value/Low-Crime" and "Low-Value/High-Crime" areas.
+
+3) Genomic Sequence GroupingScenario: A biologist has individual DNA samples and wants to construct a phylogenetic tree by pairing the most genetically similar sequences step-by-step.Input Features ($X$):$X_1$: Genetic Marker A expression level$X_2$: Genetic Marker B expression levelTarget Variable ($Y$): Phylogenetic clade (Cluster)Practice Goal: Group samples bottom-up using Ward's linkage to find the evolutionary branches of the samples.
+
+4) Factory Machine Failure ModesScenario: An engineer wants to group individual machine breakdown incidents to find common root causes by linking the most similar failure metrics first.Input Features ($X$):$X_1$: Operating temperature at time of failure (in Celsius)$X_2$: Vibration frequency anomaly (in Hz)Target Variable ($Y$): Failure mode prototype (Cluster)Practice Goal: Use bottom-up clustering to merge incidents until 3 distinct types of machine failure modes are identified.
+
+5) Topic Modeling for News ArticlesScenario: A news aggregator starts with individual articles and merges them into progressively larger overarching topics (e.g., individual tech articles merged into a general "Technology" category).Input Features ($X$):$X_1$: Keyword frequency count for "Economy"$X_2$: Keyword frequency count for "Election"Target Variable ($Y$): Broad news category (Cluster)Practice Goal: Compute a distance matrix and group the articles bottom-up to form 2 main news categories.
+------------------------------------------------------
+Divisive Clustering (Top-Down)
+------------------------------------------------------
+
+1) Macro-Market SplittingScenario: A global streaming service wants to divide its single massive global user base into distinct regional cohorts by repeatedly splitting the largest, most diverse groups.Input Features ($X$):$X_1$: Average daily watch time (in minutes)$X_2$: Preference score for localized content (1-10)Target Variable ($Y$): Regional cohort grouping (Cluster)Practice Goal: Start with all users in one cluster and split them top-down to find 2 highly cohesive viewer markets.
+
+
+2) Supply Chain Logistics HubsScenario: A national delivery company wants to split a massive country-wide delivery zone into smaller, localized fulfillment regions to reduce shipping times.Input Features ($X$):$X_1$: Delivery coordinate (Latitude)$X_2$: Delivery coordinate (Longitude)Target Variable ($Y$): Assigned localized logistics region (Cluster)Practice Goal: Divide the entire national map top-down into 3 sub-regions by continually splitting the cluster with the highest spatial variance.
+
+3) Codebase Microservices RefactoringScenario: A software architect needs to break down a giant monolithic application into smaller microservices by separating distinct functional modules.Input Features ($X$):$X_1$: Number of shared database tables utilized$X_2$: Frequency of cross-module API calls per minuteTarget Variable ($Y$): Microservice boundary (Cluster)Practice Goal: Partition the monolith top-down into 2 independent microservices with minimal overlap.
+
+4)  Organizing a Broad E-commerce CatalogScenario: An online retailer wants to take a massive "All Products" inventory and repeatedly split it into finer sub-categories.Input Features ($X$):$X_1$: Product weight (in kg)$X_2$: Average retail price (in USD)Target Variable ($Y$): Department sub-category (Cluster)Practice Goal: Split the master product list iteratively to form 3 distinct department categories based on physical size and cost.
+
+5) Network Traffic Anomaly SegregationScenario: A cybersecurity system logs all incoming server traffic as one large dataset and needs to split it sequentially to isolate normal traffic from distinct types of DDoS attacks.Input Features ($X$):$X_1$: Requests per second from source IP$X_2$: Average packet size (in bytes)Target Variable ($Y$): Traffic classification group (Cluster)Practice Goal: Isolate malicious traffic by continuously splitting the most anomalous subgroups top-down until the "normal" baseline is separated from the attacks.
