@@ -1,0 +1,13 @@
+Area,Direction,Distance,DailyOrders
+A,North,2,95
+B,North,3,90
+C,North,4,100
+D,North,5,85
+E,East,10,55
+F,East,11,60
+G,East,12,50
+H,East,13,58
+I,South,20,20
+J,South,21,25
+K,South,22,18
+L,South,23,22
