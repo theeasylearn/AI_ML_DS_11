@@ -134,8 +134,6 @@ def devisive_clustering(X,countries,no_of_clusters=4):
         del clusters[max_key] 
         # print (clusters)
     return clusters
-
-
 clusters = devisive_clustering(X_scaled,df['Country'].to_list(),4)
 print(clusters)
 
@@ -153,3 +151,18 @@ for cluster_id,indexes in clusters.items():
         df.loc[index,"cluster"] = cluster_id
 
 print(df)
+
+#display data as chart
+plt.figure(figsize=(10,6))
+plt.scatter(df["GDP_per_capita"],df["Life_expectancy"],c=df['cluster'],s=100)
+#add lables for each c 
+for i in range(len(df)):
+    plt.annotate(df.loc[i,'Country'],(
+        df.loc[i,"GDP_per_capita"],
+        df.loc[i,"Life_expectancy"]
+    ),xytext=(5,5),textcoords="offset points")
+
+plt.title("Divisive clustering")
+plt.xlabel("GDP per person")
+plt.ylabel("Age ")
+plt.show()
