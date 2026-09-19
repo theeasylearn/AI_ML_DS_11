@@ -52,6 +52,17 @@ print(x_scaled)
 
 ward_linkage = linkage(x_scaled,method='ward')
 
+plt.figure(figsize=(10,12))
+#create dendrogram 
+dendrogram(ward_linkage,labels=df["Customer"].values)
+
+plt.title("Hierarchical Clustering Dendrogram - Ward Method")
+plt.xlabel("Data Points")
+plt.ylabel("Euclidean Distance")
+plt.show()
+
+
+
 model = AgglomerativeClustering(n_clusters=4,linkage="ward")
 model.fit_predict(x_scaled)
 
