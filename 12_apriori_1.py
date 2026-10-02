@@ -45,9 +45,7 @@ rules = association_rules(
     metric="confidence",
     min_threshold=0.50
 )
-
 print("\nASSOCIATION RULES")
-
 for _, rule in rules.iterrows():
     print(
         f"{', '.join(rule['antecedents'])} -> "
@@ -57,15 +55,12 @@ for _, rule in rules.iterrows():
     print(f"Confidence: {rule['confidence']:.2%}")
     print(f"Lift: {rule['lift']:.2f}")
     print("-" * 40)
-
 # Find strong rules
 strong_rules = rules[
     (rules["confidence"] >= 0.60) &
     (rules["lift"] > 1)
 ]
-
 print("\nSTRONG RULES")
-
 for _, rule in strong_rules.iterrows():
     print(
         f"{', '.join(rule['antecedents'])} -> "
