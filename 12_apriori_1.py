@@ -18,8 +18,7 @@ transactions = [
     ["Butter"],
     ["Butter"],
     ["Butter"],
-    ["Butter"],
-    ["Cheese"]
+    ["Butter"]
 ]
 
 # Convert transactions to 0/1 format
@@ -29,7 +28,7 @@ df = pd.DataFrame(data, columns=encoder.columns_)
 
 print("TRANSACTION DATA")
 print(df)
-exit(1)
+# exit(1)
 # Find frequent itemsets
 frequent_itemsets = apriori(
     df,
@@ -38,33 +37,24 @@ frequent_itemsets = apriori(
 )
 print("\nFREQUENT ITEMSETS")
 print(frequent_itemsets)
-
+# exit(1)
 # Generate association rules
-rules = association_rules(
-    frequent_itemsets,
-    metric="confidence",
-    min_threshold=0.50
-)
+rules = association_rules(frequent_itemsets,metric="confidence",min_threshold=0.30)
 print("\nASSOCIATION RULES")
-for _, rule in rules.iterrows():
-    print(
-        f"{', '.join(rule['antecedents'])} -> "
-        f"{', '.join(rule['consequents'])}"
-    )
+for _,rule in rules.iterrows():
+    print(rule['antecedents']," -> ",rule['consequents'])
     print(f"Support: {rule['support']:.2%}")
     print(f"Confidence: {rule['confidence']:.2%}")
     print(f"Lift: {rule['lift']:.2f}")
     print("-" * 40)
+# exit(1)
 # Find strong rules
-strong_rules = rules[
-    (rules["confidence"] >= 0.60) &
-    (rules["lift"] > 1)
-]
+strong_rules = rules[(rules["confidence"] >= 0.60) & (rules["lift"] > 1)]
+#variable = dataframe[condition]
 print("\nSTRONG RULES")
-for _, rule in strong_rules.iterrows():
-    print(
-        f"{', '.join(rule['antecedents'])} -> "
-        f"{', '.join(rule['consequents'])}"
-    )
+for _,rule in strong_rules.iterrows():
+    print(rule['antecedents']," -> ",rule['consequents'])
+    print(f"Support: {rule['support']:.2%}")
     print(f"Confidence: {rule['confidence']:.2%}")
     print(f"Lift: {rule['lift']:.2f}")
+    print("-" * 40)
