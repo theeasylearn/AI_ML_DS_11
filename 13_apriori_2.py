@@ -1,7 +1,7 @@
 import pandas as pd
 from mlxtend.frequent_patterns import apriori, association_rules
 import kagglehub
-
+# pip install openpyxl
 # Download dataset
 path = kagglehub.dataset_download("varshinipallerla/food-delivery")
 
@@ -44,3 +44,31 @@ filtered_rules = filtered_rules.drop_duplicates(subset=['itemset_pair'], keep='f
 filtered_rules = filtered_rules.drop(columns=['itemset_pair']).sort_values(by='lift', ascending=False)
 
 print(filtered_rules[['antecedents','consequents','support','confidence','lift']])
+for _,rule in filtered_rules.iterrows():
+    print("".join(rule['antecedents']),end=' ')
+    print("".join(rule['consequents']),end=' ')
+    print(round(rule['support'],2),end=' ')
+    print(round(rule['confidence'],2),end=' ')
+    print(round(rule['lift'],2))
+    print("-"*100)
+
+#writing data into excel file 
+
+# 1. Convert frozensets to comma-separated strings for Excel compatibility
+filtered_rules['antecedents'] = filtered_rules['antecedents'].apply(lambda item: ','.join(list(item)))
+
+filtered_rules['consequents'] = filtered_rules['consequents'].apply(lambda item: ', '.join(list(item)))
+
+# 2. (Optional) Round the numerical metrics to an exact number of decimal places
+numeric_columns = [ 'support', 'confidence', 'lift']
+for col in numeric_columns:
+    if col in filtered_rules.columns:
+        filtered_rules[col] = filtered_rules[col].round(2)
+
+# write all columns to files 
+# filtered_rules.to_excel("filtered_rules.xlsx", index=False)
+
+#write only selected columns into files
+file_name = "filtered_rules.xlsx"
+filtered_rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']].to_excel(file_name, index=False)
+
