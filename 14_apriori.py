@@ -48,35 +48,26 @@ transactions = (
     .apply(list)
     .tolist()
 )
-print(transactions)
+# print(transactions[0:5])
 # exit(1)
 # Convert transactions to binary format
 encoder = TransactionEncoder()
 data = encoder.fit_transform(transactions)
-
-df = pd.DataFrame(
-    data,
-    columns=encoder.columns_
-)
-
+df = pd.DataFrame(data,columns=encoder.columns_)
 print("NUMBER OF USERS:", len(transactions))
 print("NUMBER OF MOVIES:", len(df.columns))
-
+print(df.head())
+# exit(1)
 # Find frequent movie combinations
-frequent_itemsets = apriori(
-    df,
-    min_support=0.05,
-    use_colnames=True
-)
-
+frequent_itemsets = apriori(df,min_support=0.05,use_colnames=True)
 print("\nFREQUENT MOVIE ITEMSETS")
-print(frequent_itemsets)
-
+# print(frequent_itemsets)
+# exit(1)
 # Generate association rules
 rules = association_rules(
     frequent_itemsets,
     metric="confidence",
-    min_threshold=0.30
+    min_threshold=0.50
 )
 
 # Keep useful columns
@@ -91,15 +82,10 @@ rules = rules[
 ]
 
 # Keep positive associations
-rules = rules[
-    rules["lift"] > 1
-]
-
+rules = rules[rules["lift"] >= 1.5]
+rules = rules[rules["consequents"].apply(lambda x: len(x) == 1)]
 # Sort by lift
-rules = rules.sort_values(
-    "lift",
-    ascending=False
-)
+rules = rules.sort_values("lift",ascending=False)
 
 print("\nMOVIE ASSOCIATION RULES")
 
@@ -113,3 +99,7 @@ for _, rule in rules.head(20).iterrows():
     print(f"Confidence: {rule['confidence']:.2%}")
     print(f"Lift: {rule['lift']:.2f}")
     print("-" * 50)
+
+#task
+# remove duplicate entry skip entry with lower confidence
+# export data into mysql format
