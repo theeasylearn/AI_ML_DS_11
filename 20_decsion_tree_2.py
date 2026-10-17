@@ -1,0 +1,91 @@
+from sklearn.preprocessing import StandardScaler
+
+import kagglehub
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
+# --------------------------------------------------
+# 1. Download dataset from Kaggle
+# --------------------------------------------------
+path = kagglehub.dataset_download(
+    "youssefaboelwafa/hotel-booking-cancellation-prediction"
+)
+# --------------------------------------------------
+# 2. Load dataset
+# --------------------------------------------------
+df = pd.read_csv(path + "/booking.csv")
+# --------------------------------------------------
+# 3. Clean column names
+# --------------------------------------------------
+df.columns = df.columns.str.strip()
+# --------------------------------------------------
+# 4. Convert categorical values into numbers
+# --------------------------------------------------
+
+df["education"] = df["education"].str.strip().map({
+    "Graduate": 1,
+    "Not Graduate": 0
+})
+
+df["self_employed"] = df["self_employed"].str.strip().map({
+    "Yes": 1,
+    "No": 0
+})
+
+df["loan_status"] = df["loan_status"].str.strip().map({
+    "Approved": 1,
+    "Rejected": 0
+})
+# --------------------------------------------------
+# 5. Select input features
+# --------------------------------------------------
+
+X = df[
+    [
+        "no_of_dependents",
+        "education",
+        "self_employed",
+        "income_annum",
+        "loan_amount",
+        "loan_term",
+        "cibil_score",
+        "residential_assets_value",
+        "commercial_assets_value",
+        "luxury_assets_value",
+        "bank_asset_value"
+    ]
+]
+
+
+# --------------------------------------------------
+# 6. Select target
+# --------------------------------------------------
+
+y = df["loan_status"]
+
+scaler = StandardScaler()
+X = scaler.fit_transform(X)
+# --------------------------------------------------
+# 7. Split data
+# --------------------------------------------------
+
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.20,random_state=42)
+# --------------------------------------------------
+# 8. Create Decision Tree
+# --------------------------------------------------
+model = DecisionTreeClassifier(criterion="gini",random_state=42)
+# --------------------------------------------------
+# 9. Train model
+# --------------------------------------------------
+model.fit(X_train, y_train)
+# --------------------------------------------------
+# 10. Make prediction
+# --------------------------------------------------
+y_pred = model.predict(X_test)
+# --------------------------------------------------
+# 11. Check accuracy
+# --------------------------------------------------
+accuracy = accuracy_score(y_test, y_pred)
+print("Accuracy:", accuracy)
+
