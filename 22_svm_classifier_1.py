@@ -112,24 +112,3 @@ for email, prediction in zip(new_emails, predictions):
 
 # 11. Enter your own email
 print("\nTest your own email")
-
-while True:
-    email = input(
-        "\nEnter an email (or type exit to stop): "
-    )
-
-    if email.strip().lower() == "exit":
-        break
-
-    if not email.strip():
-        print("Please enter an email.")
-        continue
-
-    prediction = model.predict([email])[0]
-
-    print("Prediction:", prediction.upper())
-
-    if prediction == "spam":
-        print("This email is classified as SPAM.")
-    else:
-        print("This email is classified as NOT SPAM.")
