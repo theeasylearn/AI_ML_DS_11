@@ -98,7 +98,7 @@ print(df["category"].value_counts(), "\n")
 def clean_sms(text):
     text = text.lower()
     text = re.sub(r"@\w+", " ", text)         # zomato@hdfcbank -> zomato  hdfcbank(drop bank handle)
-    text = re.sub(r"\bxx\d+\b", " ", text)    # account numbers like xx1234
+    text = re.sub(r"\bxx\d+\b", " ", text)    # account numbers like +
     text = re.sub(r"\d+(\.\d+)?", " ", text)  # amounts and reference numbers
     return text
 
