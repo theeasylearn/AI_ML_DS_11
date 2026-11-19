@@ -33,6 +33,7 @@ print(df_raw.shape)
 TEXT_COLS = ["title", "company_profile", "description", "requirements", "benefits"]
 CAT_SRC   = ["employment_type", "required_experience", "required_education", "function", "industry"]
 CAT_COLS  = CAT_SRC + ["country"]
+
 BIN_COLS  = [
     "telecommuting", "has_company_logo", "has_questions", "has_salary",
     # "Missing section" flags: scam posts often leave these blank
@@ -89,7 +90,10 @@ preprocess = ColumnTransformer([
 ])
 
 pipe = Pipeline(
-    [("pre", preprocess), ("select", SelectKBest(chi2)), ("nb", BernoulliNB())],
+    [
+        ("pre", preprocess), 
+        ("select", SelectKBest(chi2)), 
+        ("nb", BernoulliNB())],
     memory="nb_cache",       # vectorise once per fold, not once per grid point
 )
 
@@ -104,9 +108,12 @@ cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 
 print("Tuning k and alpha (scored on PR-AUC)...")
 grid = GridSearchCV(pipe, param_grid, scoring="average_precision", cv=cv, n_jobs=-1)
+
 grid.fit(X_train, y_train)
+# it will get best model
 model = grid.best_estimator_
 print(f"Best params: {grid.best_params_}  |  CV PR-AUC: {grid.best_score_:.4f}")
+
 
 # ==========================================
 # 5. THRESHOLD TUNING (on out-of-fold TRAIN predictions, never on test)
@@ -125,6 +132,7 @@ thr_target = thr[ok[0]] if len(ok) else thr_best_f1   # lowest threshold that hi
 
 print(f"Threshold for best F1            : {thr_best_f1:.4f}")
 print(f"Threshold for >= {TARGET_PRECISION:.0%} precision  : {thr_target:.4f}")
+# exit(1)
 
 # ==========================================
 # 6. EVALUATION
