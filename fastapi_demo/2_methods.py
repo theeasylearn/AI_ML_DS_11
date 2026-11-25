@@ -75,5 +75,5 @@ def update(
 # to run then command
 #fastapi dev 2_methods.py
 # or 
-#fastapi run 2_methods.py
+#fastapi run 2_methods.py  
 
